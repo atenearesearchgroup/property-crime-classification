@@ -6,9 +6,9 @@ Abstract: The classification of police reports according to the typification of 
 
 The contents of this repository as organized as follows:
 
-* Tool artifacts: All artifacts developed in the project, including the SPCO Ontology, the neo4j....  
+* [Tool artifacts](https://github.com/atenearesearchgroup/property-crime-classification/tree/main/ToolArtifacts): All artifacts developed in the project, including the SPCO Ontology, the neo4j database with the implementation of the ontology, etc.  
 * [Empirical evaluation](https://github.com/atenearesearchgroup/property-crime-classification/tree/main/Experiment): This folder contains the complete protocol used in the experiment, materials and exercises provided to the subjects, the questionnaires used and the anonymized results collected.
 
 ---
 
-**Disclaimer**: This repository is currently under development. The   
+**Disclaimer**: This repository is currently under development.   
