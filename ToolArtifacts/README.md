@@ -188,7 +188,7 @@ To consult the evaluated rdf examples, please follow the instructions below:
     http://neo4j_server_ip:7474/browser/
 ```  
 
-* Copy the loading file [example1.graphml](https://github.com/atenearesearchgroup/property-crime-classification/blob/main/ToolArtifacts/Sentences/), from the folder of the evaluated example, of nodes and relations from the evaluation example into $HOME_NEO4J/import
+* Copy the loading file [exampleX.graphml](https://github.com/atenearesearchgroup/property-crime-classification/blob/main/ToolArtifacts/Sentences/), from the folder of the evaluated example, of nodes and relations from the evaluation example into $HOME_NEO4J/import
 * Run next statement of the copied graphml file in the Neo4j client
 
 ```
