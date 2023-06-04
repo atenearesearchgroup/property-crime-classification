@@ -1,0 +1,71 @@
+#################################################################
+#    Individuals Atestado_05_20
+#################################################################
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#Atestado_05_20
+<http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#Atestado_05_20> rdf:type owl:NamedIndividual ,
+                                                                                                            <http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#Company> ,
+                                                                                                            <http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#OffenceActor> ,
+                                                                                                            <http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#OffenceElement> ,
+                                                                                                            <http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#Person> ,
+                                                                                                            <http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#PropertyCrimeReport> ,
+                                                                                                            <http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#Report> ,
+                                                                                                            <http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#Theft> ,
+                                                                                                            <http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#TheftByNotOwner> ,
+                                                                                                            [ rdf:type owl:Class ;
+                                                                                                              owl:complementOf [ rdf:type owl:Restriction ;
+                                                                                                                                 owl:onProperty <http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#hasOffenceCharacteristic> ;
+                                                                                                                                 owl:someValuesFrom <http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#RobberyCharacteristic>
+                                                                                                                               ]
+                                                                                                            ] ;
+                                                                                                   <http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#stolenthing> <http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#Motocicleta> .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#Denunciado_01
+<http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#Denunciado_01> rdf:type owl:NamedIndividual ,
+                                                                                                           <http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#Accused> ,
+                                                                                                           <http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#Company> ,
+                                                                                                           <http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#OffenceActor> ,
+                                                                                                           <http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#OffenceElement> ,
+                                                                                                           <http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#Person> ;
+                                                                                                  <http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#isThiefOf> <http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#Motocicleta> .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#Motocicleta
+<http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#Motocicleta> rdf:type owl:NamedIndividual ,
+                                                                                                         <http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#Company> ,
+                                                                                                         <http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#OffenceActor> ,
+                                                                                                         <http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#OffenceElement> ,
+                                                                                                         <http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#Person> ,
+                                                                                                         <http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#StolenGoods> ;
+                                                                                                <http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#belongsTo> <http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#Victima_01> ,
+                                                                                                                                                                                              <http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#Victima_02> ;
+                                                                                                <http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#referencedIn> <http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#Atestado_05_20> ;
+                                                                                                <http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#stolenBy> <http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#Denunciado_01> ;
+                                                                                                <http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#usedBy> <http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#Victima_01> ,
+                                                                                                                                                                                           <http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#Victima_02> ;
+                                                                                                <http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#usedByOwner> <http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#Victima_01> ,
+                                                                                                                                                                                                <http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#Victima_02> .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#Victima_01
+<http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#Victima_01> rdf:type owl:NamedIndividual ,
+                                                                                                        <http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#Company> ,
+                                                                                                        <http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#OffenceActor> ,
+                                                                                                        <http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#OffenceElement> ,
+                                                                                                        <http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#Person> ,
+                                                                                                        <http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#Victim> ;
+                                                                                               <http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#isOwnerOf> <http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#Motocicleta> ;
+                                                                                               <http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#isUserOf> <http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#Motocicleta> .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#Victima_02
+<http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#Victima_02> rdf:type owl:NamedIndividual ,
+                                                                                                        <http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#Company> ,
+                                                                                                        <http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#OffenceActor> ,
+                                                                                                        <http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#OffenceElement> ,
+                                                                                                        <http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#Person> ,
+                                                                                                        <http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#Victim> ;
+                                                                                               <http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#isOwnerOf> <http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#Motocicleta> ;
+                                                                                               <http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#isUserOf> <http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#Motocicleta> .
+

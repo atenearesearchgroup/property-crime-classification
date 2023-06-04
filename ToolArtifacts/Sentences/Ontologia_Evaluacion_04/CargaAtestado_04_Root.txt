@@ -1,0 +1,104 @@
+MATCH (rootA:owl__NamedIndividual {name: 'Atestado_04_20'})
+WHERE rootA.article is null
+call apoc.refactor.cloneNodes([rootA], false) yield output
+with rootA, output
+set output.article = 'ns0_Article234_1'
+return rootA, output;
+
+MATCH (rootA:owl__NamedIndividual {name: 'Atestado_04_20'})
+WHERE rootA.article is null
+call apoc.refactor.cloneNodes([rootA], false) yield output
+with rootA, output
+set output.article = 'ns0_Article234_2'
+return rootA, output;
+
+MATCH (rootA:owl__NamedIndividual {name: 'Atestado_04_20'})
+WHERE rootA.article is null
+call apoc.refactor.cloneNodes([rootA], false) yield output
+with rootA, output
+set output.article = 'ns0_Article234_3'
+return rootA, output;
+
+MATCH (rootA:owl__NamedIndividual {name: 'Atestado_04_20'})
+WHERE rootA.article is null
+call apoc.refactor.cloneNodes([rootA], false) yield output
+with rootA, output
+set output.article = 'ns0_Article235_1'
+return rootA, output;
+
+MATCH (rootA:owl__NamedIndividual {name: 'Atestado_04_20'})
+WHERE rootA.article is null
+call apoc.refactor.cloneNodes([rootA], false) yield output
+with rootA, output
+set output.article = 'ns0_Article235_2'
+return rootA, output;
+
+MATCH (rootA:owl__NamedIndividual {name: 'Atestado_04_20'})
+WHERE rootA.article is null
+call apoc.refactor.cloneNodes([rootA], false) yield output
+with rootA, output
+set output.article = 'ns0_Article236_1'
+return rootA, output;
+
+MATCH (rootA:owl__NamedIndividual {name: 'Atestado_04_20'})
+WHERE rootA.article is null
+call apoc.refactor.cloneNodes([rootA], false) yield output
+with rootA, output
+set output.article = 'ns0_Article236_2'
+return rootA, output;
+
+MATCH (rootA:owl__NamedIndividual {name: 'Atestado_04_20'})
+WHERE rootA.article is null
+call apoc.refactor.cloneNodes([rootA], false) yield output
+with rootA, output
+set output.article = 'ns0_Article240_1'
+return rootA, output;
+
+MATCH (rootA:owl__NamedIndividual {name: 'Atestado_04_20'})
+WHERE rootA.article is null
+call apoc.refactor.cloneNodes([rootA], false) yield output
+with rootA, output
+set output.article = 'ns0_Article240_2'
+return rootA, output;
+
+MATCH (rootA:owl__NamedIndividual {name: 'Atestado_04_20'})
+WHERE rootA.article is null
+call apoc.refactor.cloneNodes([rootA], false) yield output
+with rootA, output
+set output.article = 'ns0_Article241_1'
+return rootA, output;
+
+MATCH (rootA:owl__NamedIndividual {name: 'Atestado_04_20'})
+WHERE rootA.article is null
+call apoc.refactor.cloneNodes([rootA], false) yield output
+with rootA, output
+set output.article = 'ns0_Article241_4'
+return rootA, output;
+
+MATCH (rootA:owl__NamedIndividual {name: 'Atestado_04_20'})
+WHERE rootA.article is null
+call apoc.refactor.cloneNodes([rootA], false) yield output
+with rootA, output
+set output.article = 'ns0_Article242_1'
+return rootA, output;
+
+MATCH (rootA:owl__NamedIndividual {name: 'Atestado_04_20'})
+WHERE rootA.article is null
+call apoc.refactor.cloneNodes([rootA], false) yield output
+with rootA, output
+set output.article = 'ns0_Article242_2'
+return rootA, output;
+
+MATCH (rootA:owl__NamedIndividual {name: 'Atestado_04_20'})
+WHERE rootA.article is null
+call apoc.refactor.cloneNodes([rootA], false) yield output
+with rootA, output
+set output.article = 'ns0_Article242_3'
+return rootA, output;
+
+MATCH (rootA:owl__NamedIndividual {name: 'Atestado_04_20'})
+WHERE rootA.article is null
+call apoc.refactor.cloneNodes([rootA], false) yield output
+with rootA, output
+set output.article = 'ns0_Article242_4'
+return rootA, output;

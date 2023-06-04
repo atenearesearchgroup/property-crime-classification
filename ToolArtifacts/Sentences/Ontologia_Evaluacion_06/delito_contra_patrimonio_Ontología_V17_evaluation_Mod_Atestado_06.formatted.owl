@@ -1,0 +1,1729 @@
+@prefix : <http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix swrl: <http://www.w3.org/2003/11/swrl#> .
+@prefix swrla: <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#> .
+@prefix swrlb: <http://www.w3.org/2003/11/swrlb#> .
+@prefix delito_contra_patrimonio: <http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#> .
+@base <http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio> .
+
+<http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio> rdf:type owl:Ontology .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled
+swrla:isRuleEnabled rdf:type owl:AnnotationProperty .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#isEmployed
+delito_contra_patrimonio:isEmployed rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#belongsTo
+delito_contra_patrimonio:belongsTo rdf:type owl:ObjectProperty ;
+                                   owl:inverseOf delito_contra_patrimonio:isOwnerOf ;
+                                   rdf:type owl:FunctionalProperty ;
+                                   rdfs:domain delito_contra_patrimonio:StolenGoods ;
+                                   rdfs:range delito_contra_patrimonio:Person .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#belongsToCriminalOrganization
+delito_contra_patrimonio:belongsToCriminalOrganization rdf:type owl:ObjectProperty ,
+                                                                owl:FunctionalProperty ;
+                                                       rdfs:domain delito_contra_patrimonio:Person ;
+                                                       rdfs:range delito_contra_patrimonio:CriminalOrganization .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#appliedIn
+delito_contra_patrimonio:appliedIn rdf:type owl:ObjectProperty ;
+                                                  owl:inverseOf delito_contra_patrimonio:hasOffenceCharacteristic ;
+                                                  rdf:type owl:FunctionalProperty ;
+                                                  rdfs:domain delito_contra_patrimonio:OffenceCharacteristic ;
+                                                  rdfs:range delito_contra_patrimonio:Report .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#CharacteristicProperty
+delito_contra_patrimonio:CharacteristicProperty rdf:type owl:ObjectProperty ;
+                                                rdfs:subPropertyOf owl:topObjectProperty ;
+                                                rdfs:domain delito_contra_patrimonio:OffenceCharacteristic ;
+                                                rdfs:range owl:Thing .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#isOwnerOf
+delito_contra_patrimonio:isOwnerOf rdf:type owl:ObjectProperty ,
+                                            owl:FunctionalProperty ;
+                                   rdfs:domain delito_contra_patrimonio:Person ;
+                                   rdfs:range delito_contra_patrimonio:StolenGoods .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#referencedIn
+delito_contra_patrimonio:referencedIn rdf:type owl:ObjectProperty ;
+                                        owl:inverseOf delito_contra_patrimonio:stolenthing ;
+                                        rdf:type owl:FunctionalProperty ;
+                                        rdfs:domain delito_contra_patrimonio:StolenGoods ;
+                                        rdfs:range delito_contra_patrimonio:Report .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#stolenthing
+delito_contra_patrimonio:stolenthing rdf:type owl:ObjectProperty ,
+                                           owl:FunctionalProperty ;
+                                  rdfs:domain delito_contra_patrimonio:Report ;
+                                  rdfs:range delito_contra_patrimonio:StolenGoods .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#stolenBy
+delito_contra_patrimonio:stolenBy rdf:type owl:ObjectProperty ;
+                                   owl:inverseOf delito_contra_patrimonio:isThiefOf ;
+                                   rdf:type owl:FunctionalProperty ;
+                                   rdfs:domain delito_contra_patrimonio:StolenGoods ;
+                                   rdfs:range delito_contra_patrimonio:Person .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#isThiefOf
+delito_contra_patrimonio:isThiefOf rdf:type owl:ObjectProperty ,
+                                            owl:FunctionalProperty ;
+                                   rdfs:domain delito_contra_patrimonio:Person ;
+                                   rdfs:range delito_contra_patrimonio:StolenGoods .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#usedBy
+delito_contra_patrimonio:usedBy rdf:type owl:ObjectProperty ;
+                                  owl:inverseOf delito_contra_patrimonio:isUserOf ;
+                                  rdf:type owl:FunctionalProperty ;
+                                  rdfs:domain delito_contra_patrimonio:StolenGoods ;
+                                  rdfs:range delito_contra_patrimonio:Person .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#isUserOf
+delito_contra_patrimonio:isUserOf rdf:type owl:ObjectProperty ,
+                                           owl:FunctionalProperty ;
+                                  rdfs:domain delito_contra_patrimonio:Person ;
+                                  rdfs:range delito_contra_patrimonio:StolenGoods .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#PersonProperty
+delito_contra_patrimonio:PersonProperty rdf:type owl:ObjectProperty ;
+                                        rdfs:subPropertyOf owl:topObjectProperty ;
+                                        rdfs:domain delito_contra_patrimonio:Person ;
+                                        rdfs:range owl:Thing .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#ReportProperty
+delito_contra_patrimonio:ReportProperty rdf:type owl:ObjectProperty ;
+                                        rdfs:domain delito_contra_patrimonio:Report ;
+                                        rdfs:range owl:Thing .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#stolenByOwner
+delito_contra_patrimonio:stolenByOwner rdf:type owl:ObjectProperty ,
+                                                   owl:FunctionalProperty ;
+                                          rdfs:domain delito_contra_patrimonio:StolenGoods ;
+                                          rdfs:range delito_contra_patrimonio:Person .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#TheftThingProp
+delito_contra_patrimonio:TheftThingProp rdf:type owl:ObjectProperty ;
+                                        rdfs:subPropertyOf owl:topObjectProperty ;
+                                        rdfs:domain delito_contra_patrimonio:StolenGoods ;
+                                        rdfs:range owl:Thing .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#usedByOwner
+delito_contra_patrimonio:usedByOwner rdf:type owl:ObjectProperty ,
+                                                 owl:FunctionalProperty ;
+                                        rdfs:domain delito_contra_patrimonio:StolenGoods ;
+                                        rdfs:range delito_contra_patrimonio:Person .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#hasAggravatingFactor
+delito_contra_patrimonio:hasAggravatingFactor rdf:type owl:ObjectProperty ,
+                                                          owl:FunctionalProperty ;
+                                                 rdfs:domain delito_contra_patrimonio:Person ;
+                                                 rdfs:range delito_contra_patrimonio:AggravatingFactor .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#hasMitigatingFactor
+delito_contra_patrimonio:hasMitigatingFactor rdf:type owl:ObjectProperty ,
+                                                         owl:FunctionalProperty ;
+                                                rdfs:domain delito_contra_patrimonio:Person ;
+                                                rdfs:range delito_contra_patrimonio:MitigatingFactor .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#hasOffenceAggravatingFactor
+delito_contra_patrimonio:hasOffenceAggravatingFactor rdf:type owl:ObjectProperty ,
+                                                                 owl:FunctionalProperty ;
+                                                        rdfs:domain delito_contra_patrimonio:PropertyCrimeReport ;
+                                                        rdfs:range owl:Thing .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#hasAccomplice
+delito_contra_patrimonio:hasAccomplice rdf:type owl:ObjectProperty ,
+                                                owl:SymmetricProperty ;
+                                       rdfs:domain delito_contra_patrimonio:Person ;
+                                       rdfs:range delito_contra_patrimonio:Person .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#hasEffectOffence
+delito_contra_patrimonio:hasEffectOffence rdf:type owl:ObjectProperty ,
+                                                   owl:FunctionalProperty ;
+                                          rdfs:domain delito_contra_patrimonio:Person ;
+                                          rdfs:range delito_contra_patrimonio:OffenceEffects .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#hasOffenceCharacteristic
+delito_contra_patrimonio:hasOffenceCharacteristic rdf:type owl:ObjectProperty ;
+                                                  rdfs:domain delito_contra_patrimonio:Report ;
+                                                  rdfs:range delito_contra_patrimonio:OffenceCharacteristic .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#hasPreviusSentence
+delito_contra_patrimonio:hasPreviusSentence rdf:type owl:ObjectProperty ,
+                                                   owl:FunctionalProperty ;
+                                          rdfs:domain delito_contra_patrimonio:Person ;
+                                          rdfs:range delito_contra_patrimonio:Punishment .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#hasPunishment
+delito_contra_patrimonio:hasPunishment rdf:type owl:ObjectProperty ,
+                                                owl:FunctionalProperty ;
+                                       rdfs:domain delito_contra_patrimonio:PropertyCrimeReport ;
+                                       rdfs:range delito_contra_patrimonio:Punishment .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#hasThingCharacteristic
+delito_contra_patrimonio:hasThingCharacteristic rdf:type owl:ObjectProperty ;
+                                                rdfs:domain delito_contra_patrimonio:StolenGoods ;
+                                                rdfs:range delito_contra_patrimonio:ThingCharacteristic .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#isEmployed
+delito_contra_patrimonio:isEmployed rdf:type owl:ObjectProperty ;
+                                    rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  http://www.w3.org/2002/07/owl#topObjectProperty
+owl:topObjectProperty rdfs:domain delito_contra_patrimonio:Person ;
+                      rdfs:range delito_contra_patrimonio:Company .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#Age
+delito_contra_patrimonio:Age rdf:type owl:DatatypeProperty ;
+                             rdfs:subPropertyOf owl:topDataProperty ;
+                             rdf:type owl:FunctionalProperty ;
+                             rdfs:domain delito_contra_patrimonio:Person ;
+                             rdfs:range xsd:int .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#Name
+delito_contra_patrimonio:Name rdf:type owl:DatatypeProperty ;
+                              rdfs:subPropertyOf owl:topDataProperty ;
+                              rdfs:domain delito_contra_patrimonio:Person ;
+                              rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#PersonId
+delito_contra_patrimonio:PersonId rdf:type owl:DatatypeProperty ;
+                                  rdfs:subPropertyOf owl:topDataProperty ;
+                                  rdfs:domain delito_contra_patrimonio:Person ;
+                                  rdfs:range xsd:int .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#ValueCost
+delito_contra_patrimonio:ValueCost rdf:type owl:DatatypeProperty ;
+                                   rdfs:subPropertyOf owl:topDataProperty ;
+                                   rdfs:domain delito_contra_patrimonio:StolenGoods ;
+                                   rdfs:range xsd:decimal .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#hasPunishmentValue
+delito_contra_patrimonio:hasPunishmentValue rdf:type owl:DatatypeProperty ;
+                                            rdfs:subPropertyOf owl:topDataProperty ;
+                                            rdfs:domain delito_contra_patrimonio:PropertyCrimeReport ;
+                                            rdfs:range xsd:decimal .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#isOpenOrOccupied
+delito_contra_patrimonio:isOpenOrOccupied rdf:type owl:DatatypeProperty ;
+                                          rdfs:subPropertyOf owl:topDataProperty ;
+                                          rdfs:domain delito_contra_patrimonio:OffenceCharacteristic ;
+                                          rdfs:range xsd:boolean .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#num
+delito_contra_patrimonio:num rdf:type owl:DatatypeProperty ;
+                             rdfs:subPropertyOf owl:topDataProperty ;
+                             rdfs:domain delito_contra_patrimonio:PropertyCrimePunishments ;
+                             rdfs:range xsd:integer .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#reportId
+delito_contra_patrimonio:reportId rdf:type owl:DatatypeProperty ;
+                                  rdfs:subPropertyOf owl:topDataProperty ;
+                                  rdfs:domain delito_contra_patrimonio:Report ;
+                                  rdfs:range xsd:string .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#Accused
+delito_contra_patrimonio:Accused rdf:type owl:Class ;
+                                 rdfs:subClassOf delito_contra_patrimonio:Person .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#AggravatingFactor
+delito_contra_patrimonio:AggravatingFactor rdf:type owl:Class ;
+                                           rdfs:subClassOf delito_contra_patrimonio:OffenceFactor .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#AggravatingFactorAffectingInjuredParty
+delito_contra_patrimonio:AggravatingFactorAffectingInjuredParty rdf:type owl:Class ;
+                                                                rdfs:subClassOf delito_contra_patrimonio:AggravatingFactor ,
+                                                                                [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                                                         owl:onProperty delito_contra_patrimonio:belongsTo ;
+                                                                                                         owl:someValuesFrom delito_contra_patrimonio:Victim
+                                                                                                       ]
+                                                                                                       [ rdf:type owl:Restriction ;
+                                                                                                         owl:onProperty delito_contra_patrimonio:hasEffectOffence ;
+                                                                                                         owl:someValuesFrom [ rdf:type owl:Class ;
+                                                                                                                              owl:unionOf ( delito_contra_patrimonio:FinancialSituation
+                                                                                                                                            delito_contra_patrimonio:Helplessness
+                                                                                                                                            delito_contra_patrimonio:PersonalAbuse
+                                                                                                                                          )
+                                                                                                                            ]
+                                                                                                       ]
+                                                                                                     ) ;
+                                                                                  rdf:type owl:Class
+                                                                                ] .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#AggravatyFactorAffectsAccusedParty
+delito_contra_patrimonio:AggravatyFactorAffectsAccusedParty rdf:type owl:Class ;
+                                              rdfs:subClassOf [ rdf:type owl:Class ;
+                                                                owl:unionOf ( delito_contra_patrimonio:CollaborationWithCriminalOrganisation
+                                                                              delito_contra_patrimonio:MinorAccomplice
+                                                                              delito_contra_patrimonio:OlderDetention
+                                                                            )
+                                                              ] .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#AgriculturalOrLivestockProduct
+delito_contra_patrimonio:AgriculturalOrLivestockProduct rdf:type owl:Class ;
+                                                        rdfs:subClassOf delito_contra_patrimonio:ThingCharacteristic .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#ArmedRobbery
+delito_contra_patrimonio:ArmedRobbery rdf:type owl:Class ;
+                                      rdfs:subClassOf delito_contra_patrimonio:AggravatingFactor .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#Article234_1
+delito_contra_patrimonio:Article234_1 rdf:type owl:Class ;
+                                      owl:equivalentClass [ owl:intersectionOf ( delito_contra_patrimonio:TheftByNotOwner
+                                                                                 [ rdf:type owl:Restriction ;
+                                                                                   owl:onProperty delito_contra_patrimonio:stolenthing ;
+                                                                                   owl:someValuesFrom [ rdf:type owl:Restriction ;
+                                                                                                        owl:onProperty delito_contra_patrimonio:ValueCost ;
+                                                                                                        owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                                                             owl:onDatatype xsd:decimal ;
+                                                                                                                             owl:withRestrictions ( [ xsd:minExclusive 400.0
+                                                                                                                                                    ]
+                                                                                                                                                  )
+                                                                                                                           ]
+                                                                                                      ]
+                                                                                 ]
+                                                                               ) ;
+                                                            rdf:type owl:Class
+                                                          ] .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#Article234_2
+delito_contra_patrimonio:Article234_2 rdf:type owl:Class ;
+                                      owl:equivalentClass [ owl:intersectionOf ( delito_contra_patrimonio:TheftByNotOwner
+                                                                                 [ rdf:type owl:Restriction ;
+                                                                                   owl:onProperty delito_contra_patrimonio:stolenthing ;
+                                                                                   owl:someValuesFrom [ rdf:type owl:Restriction ;
+                                                                                                        owl:onProperty delito_contra_patrimonio:ValueCost ;
+                                                                                                        owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                                                             owl:onDatatype xsd:decimal ;
+                                                                                                                             owl:withRestrictions ( [ xsd:maxInclusive 400.0
+                                                                                                                                                    ]
+                                                                                                                                                  )
+                                                                                                                           ]
+                                                                                                      ]
+                                                                                 ]
+                                                                               ) ;
+                                                            rdf:type owl:Class
+                                                          ] .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#Article234_3
+delito_contra_patrimonio:Article234_3 rdf:type owl:Class ;
+                                      owl:equivalentClass [ owl:intersectionOf ( delito_contra_patrimonio:TheftByNotOwner
+                                                                                 [ rdf:type owl:Restriction ;
+                                                                                   owl:onProperty delito_contra_patrimonio:hasOffenceCharacteristic ;
+                                                                                   owl:someValuesFrom delito_contra_patrimonio:UnlawfulEntry
+                                                                                 ]
+                                                                               ) ;
+                                                            rdf:type owl:Class
+                                                          ] .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#Article235_1_1-5
+delito_contra_patrimonio:Article235_1_1-5 rdf:type owl:Class ;
+                                          owl:equivalentClass [ owl:intersectionOf ( delito_contra_patrimonio:TheftByNotOwner
+                                                                                     [ rdf:type owl:Restriction ;
+                                                                                       owl:onProperty delito_contra_patrimonio:stolenthing ;
+                                                                                       owl:someValuesFrom [ rdf:type owl:Restriction ;
+                                                                                                            owl:onProperty delito_contra_patrimonio:hasThingCharacteristic ;
+                                                                                                            owl:someValuesFrom delito_contra_patrimonio:ThingCharacteristic
+                                                                                                          ]
+                                                                                     ]
+                                                                                   ) ;
+                                                                rdf:type owl:Class
+                                                              ] .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#Article235_1_6
+delito_contra_patrimonio:Article235_1_6 rdf:type owl:Class ;
+                                        owl:equivalentClass [ owl:intersectionOf ( delito_contra_patrimonio:TheftByNotOwner
+                                                                                   [ rdf:type owl:Restriction ;
+                                                                                     owl:onProperty delito_contra_patrimonio:hasOffenceAggravatingFactor ;
+                                                                                     owl:someValuesFrom delito_contra_patrimonio:AggravatingFactorAffectingInjuredParty
+                                                                                   ]
+                                                                                 ) ;
+                                                              rdf:type owl:Class
+                                                            ] .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#Article235_1_7
+delito_contra_patrimonio:Article235_1_7 rdf:type owl:Class ;
+                                        owl:equivalentClass [ owl:intersectionOf ( delito_contra_patrimonio:TheftByNotOwner
+                                                                                   [ rdf:type owl:Restriction ;
+                                                                                     owl:onProperty delito_contra_patrimonio:stolenthing ;
+                                                                                     owl:someValuesFrom [ rdf:type owl:Restriction ;
+                                                                                                          owl:onProperty delito_contra_patrimonio:stolenBy ;
+                                                                                                          owl:someValuesFrom delito_contra_patrimonio:OlderDetention
+                                                                                                        ]
+                                                                                   ]
+                                                                                 ) ;
+                                                              rdf:type owl:Class
+                                                            ] .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#Article235_1_8
+delito_contra_patrimonio:Article235_1_8 rdf:type owl:Class ;
+                                        owl:equivalentClass [ owl:intersectionOf ( delito_contra_patrimonio:TheftByNotOwner
+                                                                                   [ rdf:type owl:Restriction ;
+                                                                                     owl:onProperty delito_contra_patrimonio:stolenthing ;
+                                                                                     owl:someValuesFrom [ rdf:type owl:Restriction ;
+                                                                                                          owl:onProperty delito_contra_patrimonio:stolenBy ;
+                                                                                                          owl:someValuesFrom delito_contra_patrimonio:MinorAccomplice
+                                                                                                        ]
+                                                                                   ]
+                                                                                 ) ;
+                                                              rdf:type owl:Class
+                                                            ] .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#Article235_1_9
+delito_contra_patrimonio:Article235_1_9 rdf:type owl:Class ;
+                                        owl:equivalentClass [ owl:intersectionOf ( delito_contra_patrimonio:TheftByNotOwner
+                                                                                   [ rdf:type owl:Restriction ;
+                                                                                     owl:onProperty delito_contra_patrimonio:stolenthing ;
+                                                                                     owl:someValuesFrom [ rdf:type owl:Restriction ;
+                                                                                                          owl:onProperty delito_contra_patrimonio:stolenBy ;
+                                                                                                          owl:someValuesFrom delito_contra_patrimonio:CollaborationWithCriminalOrganisation
+                                                                                                        ]
+                                                                                   ]
+                                                                                 ) ;
+                                                              rdf:type owl:Class
+                                                            ] .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#Article235_2
+delito_contra_patrimonio:Article235_2 rdf:type owl:Class ;
+                                      owl:equivalentClass [ owl:intersectionOf ( delito_contra_patrimonio:TheftByNotOwner
+                                                                                 [ rdf:type owl:Restriction ;
+                                                                                   owl:onProperty delito_contra_patrimonio:stolenthing ;
+                                                                                   owl:someValuesFrom [ rdf:type owl:Restriction ;
+                                                                                                        owl:onProperty delito_contra_patrimonio:hasThingCharacteristic ;
+                                                                                                        owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+                                                                                                        owl:onClass delito_contra_patrimonio:ThingCharacteristic
+                                                                                                      ]
+                                                                                 ]
+                                                                               ) ;
+                                                            rdf:type owl:Class
+                                                          ] .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#Article236_1
+delito_contra_patrimonio:Article236_1 rdf:type owl:Class ;
+                                      owl:equivalentClass [ owl:intersectionOf ( delito_contra_patrimonio:TheftByOwner
+                                                                                 [ rdf:type owl:Restriction ;
+                                                                                   owl:onProperty delito_contra_patrimonio:stolenthing ;
+                                                                                   owl:someValuesFrom [ rdf:type owl:Restriction ;
+                                                                                                        owl:onProperty delito_contra_patrimonio:ValueCost ;
+                                                                                                        owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                                                             owl:onDatatype xsd:decimal ;
+                                                                                                                             owl:withRestrictions ( [ xsd:minExclusive 400.0
+                                                                                                                                                    ]
+                                                                                                                                                  )
+                                                                                                                           ]
+                                                                                                      ]
+                                                                                 ]
+                                                                               ) ;
+                                                            rdf:type owl:Class
+                                                          ] ;
+                                      owl:disjointWith delito_contra_patrimonio:Article236_2 .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#Article236_2
+delito_contra_patrimonio:Article236_2 rdf:type owl:Class ;
+                                      owl:equivalentClass [ owl:intersectionOf ( delito_contra_patrimonio:TheftByOwner
+                                                                                 [ rdf:type owl:Restriction ;
+                                                                                   owl:onProperty delito_contra_patrimonio:stolenthing ;
+                                                                                   owl:someValuesFrom [ rdf:type owl:Restriction ;
+                                                                                                        owl:onProperty delito_contra_patrimonio:ValueCost ;
+                                                                                                        owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                                                             owl:onDatatype xsd:decimal ;
+                                                                                                                             owl:withRestrictions ( [ xsd:maxInclusive 400.0
+                                                                                                                                                    ]
+                                                                                                                                                  )
+                                                                                                                           ]
+                                                                                                      ]
+                                                                                 ]
+                                                                               ) ;
+                                                            rdf:type owl:Class
+                                                          ] .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#Article240_1
+delito_contra_patrimonio:Article240_1 rdf:type owl:Class ;
+                                      owl:equivalentClass [ owl:intersectionOf ( delito_contra_patrimonio:Robbery
+                                                                                 [ rdf:type owl:Restriction ;
+                                                                                   owl:onProperty delito_contra_patrimonio:hasOffenceCharacteristic ;
+                                                                                   owl:someValuesFrom delito_contra_patrimonio:BurglaryCrime
+                                                                                 ]
+                                                                               ) ;
+                                                            rdf:type owl:Class
+                                                          ] .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#Article240_2_1_1-5
+delito_contra_patrimonio:Article240_2_1_1-5 rdf:type owl:Class ;
+                                            owl:equivalentClass [ owl:intersectionOf ( delito_contra_patrimonio:Article240_1
+                                                                                       [ rdf:type owl:Restriction ;
+                                                                                         owl:onProperty delito_contra_patrimonio:stolenthing ;
+                                                                                         owl:someValuesFrom [ rdf:type owl:Restriction ;
+                                                                                                              owl:onProperty delito_contra_patrimonio:hasThingCharacteristic ;
+                                                                                                              owl:someValuesFrom delito_contra_patrimonio:ThingCharacteristic
+                                                                                                            ]
+                                                                                       ]
+                                                                                     ) ;
+                                                                  rdf:type owl:Class
+                                                                ] .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#Article240_2_1_6
+delito_contra_patrimonio:Article240_2_1_6 rdf:type owl:Class ;
+                                          owl:equivalentClass [ owl:intersectionOf ( delito_contra_patrimonio:Article240_1
+                                                                                     [ rdf:type owl:Restriction ;
+                                                                                       owl:onProperty delito_contra_patrimonio:hasOffenceAggravatingFactor ;
+                                                                                       owl:someValuesFrom delito_contra_patrimonio:AggravatingFactorAffectingInjuredParty
+                                                                                     ]
+                                                                                   ) ;
+                                                                rdf:type owl:Class
+                                                              ] .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#Article240_2_1_7
+delito_contra_patrimonio:Article240_2_1_7 rdf:type owl:Class ;
+                                          owl:equivalentClass [ owl:intersectionOf ( delito_contra_patrimonio:Article240_1
+                                                                                     [ rdf:type owl:Restriction ;
+                                                                                       owl:onProperty delito_contra_patrimonio:stolenthing ;
+                                                                                       owl:someValuesFrom [ rdf:type owl:Restriction ;
+                                                                                                            owl:onProperty delito_contra_patrimonio:stolenBy ;
+                                                                                                            owl:someValuesFrom delito_contra_patrimonio:OlderDetention
+                                                                                                          ]
+                                                                                     ]
+                                                                                   ) ;
+                                                                rdf:type owl:Class
+                                                              ] .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#Article240_2_1_8
+delito_contra_patrimonio:Article240_2_1_8 rdf:type owl:Class ;
+                                          owl:equivalentClass [ owl:intersectionOf ( delito_contra_patrimonio:Article240_1
+                                                                                     [ rdf:type owl:Restriction ;
+                                                                                       owl:onProperty delito_contra_patrimonio:stolenthing ;
+                                                                                       owl:someValuesFrom [ rdf:type owl:Restriction ;
+                                                                                                            owl:onProperty delito_contra_patrimonio:stolenBy ;
+                                                                                                            owl:someValuesFrom delito_contra_patrimonio:MinorAccomplice
+                                                                                                          ]
+                                                                                     ]
+                                                                                   ) ;
+                                                                rdf:type owl:Class
+                                                              ] .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#Article240_2_1_9
+delito_contra_patrimonio:Article240_2_1_9 rdf:type owl:Class ;
+                                          owl:equivalentClass [ owl:intersectionOf ( delito_contra_patrimonio:Article240_1
+                                                                                     [ rdf:type owl:Restriction ;
+                                                                                       owl:onProperty delito_contra_patrimonio:stolenthing ;
+                                                                                       owl:someValuesFrom [ rdf:type owl:Restriction ;
+                                                                                                            owl:onProperty delito_contra_patrimonio:stolenBy ;
+                                                                                                            owl:someValuesFrom delito_contra_patrimonio:CollaborationWithCriminalOrganisation
+                                                                                                          ]
+                                                                                     ]
+                                                                                   ) ;
+                                                                rdf:type owl:Class
+                                                              ] .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#Article240_2_2
+delito_contra_patrimonio:Article240_2_2 rdf:type owl:Class ;
+                                        owl:equivalentClass [ owl:intersectionOf ( delito_contra_patrimonio:Article240_1
+                                                                                   [ rdf:type owl:Restriction ;
+                                                                                     owl:onProperty delito_contra_patrimonio:stolenthing ;
+                                                                                     owl:someValuesFrom [ rdf:type owl:Restriction ;
+                                                                                                          owl:onProperty delito_contra_patrimonio:hasThingCharacteristic ;
+                                                                                                          owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+                                                                                                          owl:onClass delito_contra_patrimonio:ThingCharacteristic
+                                                                                                        ]
+                                                                                   ]
+                                                                                 ) ;
+                                                              rdf:type owl:Class
+                                                            ] .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#Article241_1
+delito_contra_patrimonio:Article241_1 rdf:type owl:Class ;
+                                      owl:equivalentClass [ owl:intersectionOf ( delito_contra_patrimonio:Robbery
+                                                                                 [ rdf:type owl:Restriction ;
+                                                                                   owl:onProperty delito_contra_patrimonio:hasOffenceCharacteristic ;
+                                                                                   owl:someValuesFrom delito_contra_patrimonio:HouseOrPremiseBreaking
+                                                                                 ]
+                                                                               ) ;
+                                                            rdf:type owl:Class
+                                                          ] .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#Article241_4
+delito_contra_patrimonio:Article241_4 rdf:type owl:Class ;
+                                      owl:equivalentClass [ owl:intersectionOf ( delito_contra_patrimonio:Article241_1
+                                                                                 [ rdf:type owl:Restriction ;
+                                                                                   owl:onProperty delito_contra_patrimonio:hasOffenceAggravatingFactor ;
+                                                                                   owl:someValuesFrom delito_contra_patrimonio:DamageCaused
+                                                                                 ]
+                                                                               ) ;
+                                                            rdf:type owl:Class
+                                                          ] .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#Article241_4_1-5
+delito_contra_patrimonio:Article241_4_1-5 rdf:type owl:Class ;
+                                          owl:equivalentClass [ owl:intersectionOf ( delito_contra_patrimonio:Article241_1
+                                                                                     [ rdf:type owl:Restriction ;
+                                                                                       owl:onProperty delito_contra_patrimonio:stolenthing ;
+                                                                                       owl:someValuesFrom [ rdf:type owl:Restriction ;
+                                                                                                            owl:onProperty delito_contra_patrimonio:hasThingCharacteristic ;
+                                                                                                            owl:someValuesFrom delito_contra_patrimonio:ThingCharacteristic
+                                                                                                          ]
+                                                                                     ]
+                                                                                   ) ;
+                                                                rdf:type owl:Class
+                                                              ] .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#Article241_4_1_6
+delito_contra_patrimonio:Article241_4_1_6 rdf:type owl:Class ;
+                                          owl:equivalentClass [ owl:intersectionOf ( delito_contra_patrimonio:Article241_1
+                                                                                     [ rdf:type owl:Restriction ;
+                                                                                       owl:onProperty delito_contra_patrimonio:hasOffenceAggravatingFactor ;
+                                                                                       owl:someValuesFrom delito_contra_patrimonio:AggravatingFactorAffectingInjuredParty
+                                                                                     ]
+                                                                                   ) ;
+                                                                rdf:type owl:Class
+                                                              ] .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#Article241_4_1_7
+delito_contra_patrimonio:Article241_4_1_7 rdf:type owl:Class ;
+                                          owl:equivalentClass [ owl:intersectionOf ( delito_contra_patrimonio:Article241_1
+                                                                                     [ rdf:type owl:Restriction ;
+                                                                                       owl:onProperty delito_contra_patrimonio:stolenthing ;
+                                                                                       owl:someValuesFrom [ rdf:type owl:Restriction ;
+                                                                                                            owl:onProperty delito_contra_patrimonio:stolenBy ;
+                                                                                                            owl:someValuesFrom delito_contra_patrimonio:OlderDetention
+                                                                                                          ]
+                                                                                     ]
+                                                                                   ) ;
+                                                                rdf:type owl:Class
+                                                              ] .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#Article241_4_1_8
+delito_contra_patrimonio:Article241_4_1_8 rdf:type owl:Class ;
+                                          owl:equivalentClass [ owl:intersectionOf ( delito_contra_patrimonio:Article241_1
+                                                                                     [ rdf:type owl:Restriction ;
+                                                                                       owl:onProperty delito_contra_patrimonio:stolenthing ;
+                                                                                       owl:someValuesFrom [ rdf:type owl:Restriction ;
+                                                                                                            owl:onProperty delito_contra_patrimonio:stolenBy ;
+                                                                                                            owl:someValuesFrom delito_contra_patrimonio:MinorAccomplice
+                                                                                                          ]
+                                                                                     ]
+                                                                                   ) ;
+                                                                rdf:type owl:Class
+                                                              ] .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#Article241_4_1_9
+delito_contra_patrimonio:Article241_4_1_9 rdf:type owl:Class ;
+                                          owl:equivalentClass [ owl:intersectionOf ( delito_contra_patrimonio:Article241_1
+                                                                                     [ rdf:type owl:Restriction ;
+                                                                                       owl:onProperty delito_contra_patrimonio:stolenthing ;
+                                                                                       owl:someValuesFrom [ rdf:type owl:Restriction ;
+                                                                                                            owl:onProperty delito_contra_patrimonio:stolenBy ;
+                                                                                                            owl:someValuesFrom delito_contra_patrimonio:CollaborationWithCriminalOrganisation
+                                                                                                          ]
+                                                                                     ]
+                                                                                   ) ;
+                                                                rdf:type owl:Class
+                                                              ] .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#Article241_4_2
+delito_contra_patrimonio:Article241_4_2 rdf:type owl:Class ;
+                                        owl:equivalentClass [ owl:intersectionOf ( delito_contra_patrimonio:Article241_1
+                                                                                   [ rdf:type owl:Restriction ;
+                                                                                     owl:onProperty delito_contra_patrimonio:stolenthing ;
+                                                                                     owl:someValuesFrom [ rdf:type owl:Restriction ;
+                                                                                                          owl:onProperty delito_contra_patrimonio:hasThingCharacteristic ;
+                                                                                                          owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+                                                                                                          owl:onClass delito_contra_patrimonio:ThingCharacteristic
+                                                                                                        ]
+                                                                                   ]
+                                                                                 ) ;
+                                                              rdf:type owl:Class
+                                                            ] .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#Article242
+delito_contra_patrimonio:Article242 rdf:type owl:Class ;
+                                    owl:equivalentClass [ owl:intersectionOf ( delito_contra_patrimonio:Robbery
+                                                                               [ rdf:type owl:Restriction ;
+                                                                                 owl:onProperty delito_contra_patrimonio:hasOffenceCharacteristic ;
+                                                                                 owl:someValuesFrom delito_contra_patrimonio:RobberyWithIntimidationOrViolence
+                                                                               ]
+                                                                             ) ;
+                                                          rdf:type owl:Class
+                                                        ] .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#Article242_2
+delito_contra_patrimonio:Article242_2 rdf:type owl:Class ;
+                                      owl:equivalentClass [ owl:intersectionOf ( delito_contra_patrimonio:Article242
+                                                                                 [ rdf:type owl:Restriction ;
+                                                                                   owl:onProperty delito_contra_patrimonio:hasOffenceCharacteristic ;
+                                                                                   owl:someValuesFrom delito_contra_patrimonio:HouseOrPremiseBreaking
+                                                                                 ]
+                                                                               ) ;
+                                                            rdf:type owl:Class
+                                                          ] .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#Article242_3
+delito_contra_patrimonio:Article242_3 rdf:type owl:Class ;
+                                      owl:equivalentClass [ owl:intersectionOf ( delito_contra_patrimonio:Article242
+                                                                                 [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                                                          owl:onProperty delito_contra_patrimonio:stolenBy ;
+                                                                                                          owl:someValuesFrom delito_contra_patrimonio:Person
+                                                                                                        ]
+                                                                                                        [ rdf:type owl:Restriction ;
+                                                                                                          owl:onProperty delito_contra_patrimonio:hasAggravatingFactor ;
+                                                                                                          owl:someValuesFrom delito_contra_patrimonio:ArmedRobbery
+                                                                                                        ]
+                                                                                                      ) ;
+                                                                                   rdf:type owl:Class
+                                                                                 ]
+                                                                               ) ;
+                                                            rdf:type owl:Class
+                                                          ] .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#Article242_4
+delito_contra_patrimonio:Article242_4 rdf:type owl:Class ;
+                                      owl:equivalentClass [ owl:intersectionOf ( delito_contra_patrimonio:Article242
+                                                                                 [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                                                          owl:onProperty delito_contra_patrimonio:stolenBy ;
+                                                                                                          owl:someValuesFrom delito_contra_patrimonio:Person
+                                                                                                        ]
+                                                                                                        [ rdf:type owl:Restriction ;
+                                                                                                          owl:onProperty delito_contra_patrimonio:hasMitigatingFactor ;
+                                                                                                          owl:someValuesFrom delito_contra_patrimonio:MinimalIntimidationOrViolence
+                                                                                                        ]
+                                                                                                      ) ;
+                                                                                   rdf:type owl:Class
+                                                                                 ]
+                                                                               ) ;
+                                                            rdf:type owl:Class
+                                                          ] .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#ArtisticThing
+delito_contra_patrimonio:ArtisticThing rdf:type owl:Class ;
+                                       rdfs:subClassOf delito_contra_patrimonio:ThingCharacteristic .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#ForcedEntry
+delito_contra_patrimonio:ForcedEntry rdf:type owl:Class ;
+                                  rdfs:subClassOf delito_contra_patrimonio:BurglaryCrime .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#Burglary
+delito_contra_patrimonio:Burglary rdf:type owl:Class ;
+                                  rdfs:subClassOf delito_contra_patrimonio:BurglaryCrime .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#Cabling
+delito_contra_patrimonio:Cabling rdf:type owl:Class ;
+                                 rdfs:subClassOf delito_contra_patrimonio:ProvisionOfServiceThing .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#CollaborationWithCriminalOrganisation
+delito_contra_patrimonio:CollaborationWithCriminalOrganisation rdf:type owl:Class ;
+                                                               owl:equivalentClass [ owl:intersectionOf ( delito_contra_patrimonio:Accused
+                                                                                                          [ rdf:type owl:Restriction ;
+                                                                                                            owl:onProperty delito_contra_patrimonio:belongsToCriminalOrganization ;
+                                                                                                            owl:someValuesFrom delito_contra_patrimonio:CriminalOrganization
+                                                                                                          ]
+                                                                                                        ) ;
+                                                                                     rdf:type owl:Class
+                                                                                   ] .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#Company
+delito_contra_patrimonio:Company rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#ComponentsOfServiceSupply
+delito_contra_patrimonio:ComponentsOfServiceSupply rdf:type owl:Class ;
+                                                   rdfs:subClassOf delito_contra_patrimonio:ProvisionOfServiceThing .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#BurglaryCrime
+delito_contra_patrimonio:BurglaryCrime rdf:type owl:Class ;
+                                         rdfs:subClassOf delito_contra_patrimonio:OffenceCharacteristic .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#CriminalOrganization
+delito_contra_patrimonio:CriminalOrganization rdf:type owl:Class ;
+                                              rdfs:subClassOf delito_contra_patrimonio:OffenceActor .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#CulturalThing
+delito_contra_patrimonio:CulturalThing rdf:type owl:Class ;
+                                       rdfs:subClassOf delito_contra_patrimonio:ThingCharacteristic .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#DamageCaused
+delito_contra_patrimonio:DamageCaused rdf:type owl:Class ;
+                                      rdfs:subClassOf delito_contra_patrimonio:AggravatingFactor .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#DisabledAlarm
+delito_contra_patrimonio:DisabledAlarm rdf:type owl:Class ;
+                                            rdfs:subClassOf delito_contra_patrimonio:BurglaryCrime .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#ElectricityComponent
+delito_contra_patrimonio:ElectricityComponent rdf:type owl:Class ;
+                                              rdfs:subClassOf delito_contra_patrimonio:ComponentsOfServiceSupply .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#EssentialThing
+delito_contra_patrimonio:EssentialThing rdf:type owl:Class ;
+                                        rdfs:subClassOf delito_contra_patrimonio:ThingCharacteristic ;
+                                        rdfs:comment "Cuando revista especial gravedad, atendiendo al valor de los efectos sustraídos, o se produjeren perjuicios de especial consideración" .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#ForgedKeys
+delito_contra_patrimonio:ForgedKeys rdf:type owl:Class ;
+                                  rdfs:subClassOf delito_contra_patrimonio:BurglaryCrime .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#FinancialSituation
+delito_contra_patrimonio:FinancialSituation rdf:type owl:Class ;
+                                            rdfs:subClassOf delito_contra_patrimonio:OffenceEffects .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#FineOfFrom1To3Months
+delito_contra_patrimonio:FineOfFrom1To3Months rdf:type owl:Class ;
+                                              rdfs:subClassOf delito_contra_patrimonio:PropertyCrimePunishments .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#FineOfFrom3To12Months
+delito_contra_patrimonio:FineOfFrom3To12Months rdf:type owl:Class ;
+                                               rdfs:subClassOf delito_contra_patrimonio:PropertyCrimePunishments .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#ForcedLock
+delito_contra_patrimonio:ForcedLock rdf:type owl:Class ;
+                                       rdfs:subClassOf delito_contra_patrimonio:BurglaryCrime .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#GeneralInterestComponent
+delito_contra_patrimonio:GeneralInterestComponent rdf:type owl:Class ;
+                                                  rdfs:subClassOf delito_contra_patrimonio:ComponentsOfServiceSupply .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#Helplessness
+delito_contra_patrimonio:Helplessness rdf:type owl:Class ;
+                                      rdfs:subClassOf delito_contra_patrimonio:OffenceEffects .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#HistoricalThing
+delito_contra_patrimonio:HistoricalThing rdf:type owl:Class ;
+                                         rdfs:subClassOf delito_contra_patrimonio:ThingCharacteristic .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#HouseOrPremiseBreaking
+delito_contra_patrimonio:HouseOrPremiseBreaking rdf:type owl:Class ;
+                                                rdfs:subClassOf delito_contra_patrimonio:OffenceCharacteristic .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#HydrocarbonsComponent
+delito_contra_patrimonio:HydrocarbonsComponent rdf:type owl:Class ;
+                                               rdfs:subClassOf delito_contra_patrimonio:ComponentsOfServiceSupply .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#CopiedKeys
+delito_contra_patrimonio:CopiedKeys rdf:type owl:Class ;
+                                                   rdfs:subClassOf delito_contra_patrimonio:ForgedKeys .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#LostKeys
+delito_contra_patrimonio:LostKeys rdf:type owl:Class ;
+                                            rdfs:subClassOf delito_contra_patrimonio:ForgedKeys .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#LowerHalfSentence
+delito_contra_patrimonio:LowerHalfSentence rdf:type owl:Class ;
+                                           rdfs:subClassOf delito_contra_patrimonio:PropertyCrimePunishments .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#MinimalIntimidationOrViolence
+delito_contra_patrimonio:MinimalIntimidationOrViolence rdf:type owl:Class ;
+                                                       rdfs:subClassOf delito_contra_patrimonio:MitigatingFactor .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#MinorAccomplice
+delito_contra_patrimonio:MinorAccomplice rdf:type owl:Class ;
+                                         owl:equivalentClass [ owl:intersectionOf ( delito_contra_patrimonio:Accused
+                                                                                    [ rdf:type owl:Restriction ;
+                                                                                      owl:onProperty delito_contra_patrimonio:hasAccomplice ;
+                                                                                      owl:someValuesFrom [ rdf:type owl:Restriction ;
+                                                                                                           owl:onProperty delito_contra_patrimonio:Age ;
+                                                                                                           owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                                                                owl:onDatatype xsd:integer ;
+                                                                                                                                owl:withRestrictions ( [ xsd:maxExclusive 16
+                                                                                                                                                       ]
+                                                                                                                                                     )
+                                                                                                                              ]
+                                                                                                         ]
+                                                                                    ]
+                                                                                  ) ;
+                                                               rdf:type owl:Class
+                                                             ] .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#MitigatingFactor
+delito_contra_patrimonio:MitigatingFactor rdf:type owl:Class ;
+                                          rdfs:subClassOf delito_contra_patrimonio:OffenceFactor .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#StolenGoods
+delito_contra_patrimonio:StolenGoods rdf:type owl:Class ;
+                                      rdfs:subClassOf delito_contra_patrimonio:OffenceElement .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#ThingCharacteristic
+delito_contra_patrimonio:ThingCharacteristic rdf:type owl:Class ;
+                                                    rdfs:subClassOf delito_contra_patrimonio:OffenceElement .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#OffenceActor
+delito_contra_patrimonio:OffenceActor rdf:type owl:Class ;
+                                      rdfs:subClassOf delito_contra_patrimonio:OffenceElement .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#PropertyCrimeReport
+delito_contra_patrimonio:PropertyCrimeReport rdf:type owl:Class ;
+                                                      owl:equivalentClass [ owl:intersectionOf ( delito_contra_patrimonio:Report
+                                                                                                 [ rdf:type owl:Restriction ;
+                                                                                                   owl:onProperty delito_contra_patrimonio:stolenthing ;
+                                                                                                   owl:someValuesFrom [ rdf:type owl:Restriction ;
+                                                                                                                        owl:onProperty delito_contra_patrimonio:belongsTo ;
+                                                                                                                        owl:someValuesFrom delito_contra_patrimonio:Victim
+                                                                                                                      ]
+                                                                                                 ]
+                                                                                               ) ;
+                                                                            rdf:type owl:Class
+                                                                          ] .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#OffenceCharacteristic
+delito_contra_patrimonio:OffenceCharacteristic rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#OffenceEffects
+delito_contra_patrimonio:OffenceEffects rdf:type owl:Class ;
+                                        rdfs:subClassOf delito_contra_patrimonio:OffenceElement .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#OffenceElement
+delito_contra_patrimonio:OffenceElement rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#OffenceFactor
+delito_contra_patrimonio:OffenceFactor rdf:type owl:Class ;
+                                       rdfs:subClassOf delito_contra_patrimonio:OffenceElement .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#OlderDetention
+delito_contra_patrimonio:OlderDetention rdf:type owl:Class ;
+                                        owl:equivalentClass [ owl:intersectionOf ( delito_contra_patrimonio:Accused
+                                                                                   [ rdf:type owl:Restriction ;
+                                                                                     owl:onProperty delito_contra_patrimonio:hasPreviusSentence ;
+                                                                                     owl:someValuesFrom [ rdf:type owl:Restriction ;
+                                                                                                          owl:onProperty delito_contra_patrimonio:num ;
+                                                                                                          owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                                                               owl:onDatatype xsd:integer ;
+                                                                                                                               owl:withRestrictions ( [ xsd:minExclusive 3
+                                                                                                                                                      ]
+                                                                                                                                                    )
+                                                                                                                             ]
+                                                                                                        ]
+                                                                                   ]
+                                                                                 ) ;
+                                                              rdf:type owl:Class
+                                                            ] .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#Person
+delito_contra_patrimonio:Person rdf:type owl:Class ;
+                                rdfs:subClassOf delito_contra_patrimonio:OffenceActor .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#PersonalAbuse
+delito_contra_patrimonio:PersonalAbuse rdf:type owl:Class ;
+                                       rdfs:subClassOf delito_contra_patrimonio:OffenceEffects .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#StolenKeys
+delito_contra_patrimonio:StolenKeys rdf:type owl:Class ;
+                              rdfs:subClassOf delito_contra_patrimonio:ForgedKeys .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#Pipelines
+delito_contra_patrimonio:Pipelines rdf:type owl:Class ;
+                                   rdfs:subClassOf delito_contra_patrimonio:ProvisionOfServiceThing .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#PrisionBetween1To3MonthsUpperHalfSentence
+delito_contra_patrimonio:PrisionBetween1To3MonthsUpperHalfSentence rdf:type owl:Class ;
+                                                                   rdfs:subClassOf delito_contra_patrimonio:PropertyCrimePunishments .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#PrisionBetween1To3Moths
+delito_contra_patrimonio:PrisionBetween1To3Moths rdf:type owl:Class ;
+                                                 rdfs:subClassOf delito_contra_patrimonio:PropertyCrimePunishments .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#PrisionBetween1To3Years
+delito_contra_patrimonio:PrisionBetween1To3Years rdf:type owl:Class ;
+                                                 rdfs:subClassOf delito_contra_patrimonio:PropertyCrimePunishments .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#PrisionBetween1To3YearsUpperHalfSentence
+delito_contra_patrimonio:PrisionBetween1To3YearsUpperHalfSentence rdf:type owl:Class ;
+                                                                  rdfs:subClassOf delito_contra_patrimonio:PropertyCrimePunishments .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#PrisionBetween1To5Years
+delito_contra_patrimonio:PrisionBetween1To5Years rdf:type owl:Class ;
+                                                 rdfs:subClassOf delito_contra_patrimonio:PropertyCrimePunishments .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#PrisionBetween2To5Years
+delito_contra_patrimonio:PrisionBetween2To5Years rdf:type owl:Class ;
+                                                 rdfs:subClassOf delito_contra_patrimonio:PropertyCrimePunishments .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#PrisionBetween2To5YearsLowerHalfSentence
+delito_contra_patrimonio:PrisionBetween2To5YearsLowerHalfSentence rdf:type owl:Class ;
+                                                                  rdfs:subClassOf delito_contra_patrimonio:PropertyCrimePunishments .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#PrisionBetween2To5YearsUpperHalfSentence
+delito_contra_patrimonio:PrisionBetween2To5YearsUpperHalfSentence rdf:type owl:Class ;
+                                                                  rdfs:subClassOf delito_contra_patrimonio:PropertyCrimePunishments .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#PrisionBetween2To5YearsUpperHalfSentenceLowerHalfSentence
+delito_contra_patrimonio:PrisionBetween2To5YearsUpperHalfSentenceLowerHalfSentence rdf:type owl:Class ;
+                                                                                   rdfs:subClassOf delito_contra_patrimonio:PropertyCrimePunishments .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#PrisionBetween2To6Years
+delito_contra_patrimonio:PrisionBetween2To6Years rdf:type owl:Class ;
+                                                 rdfs:subClassOf delito_contra_patrimonio:PropertyCrimePunishments .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#PrisionBetween3YearsAnd6MonthsTo5Years
+delito_contra_patrimonio:PrisionBetween3YearsAnd6MonthsTo5Years rdf:type owl:Class ;
+                                                                rdfs:subClassOf delito_contra_patrimonio:PropertyCrimePunishments .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#PrisionBetween3YearsAnd6MonthsTo5YearsLowerHalfSentence
+delito_contra_patrimonio:PrisionBetween3YearsAnd6MonthsTo5YearsLowerHalfSentence rdf:type owl:Class ;
+                                                                                 rdfs:subClassOf delito_contra_patrimonio:PropertyCrimePunishments .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#PrisionBetween3YearsAnd6MonthsTo5YearsUpperHalfSentence
+delito_contra_patrimonio:PrisionBetween3YearsAnd6MonthsTo5YearsUpperHalfSentence rdf:type owl:Class ;
+                                                                                 rdfs:subClassOf delito_contra_patrimonio:PropertyCrimePunishments .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#PrisionBetween3YearsAnd6MonthsTo5YearsUpperHalfSentenceLowerHalfSentence
+delito_contra_patrimonio:PrisionBetween3YearsAnd6MonthsTo5YearsUpperHalfSentenceLowerHalfSentence rdf:type owl:Class ;
+                                                                                                  rdfs:subClassOf delito_contra_patrimonio:PropertyCrimePunishments .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#PrisionBetween6To18MonthsUpperHalfSentence
+delito_contra_patrimonio:PrisionBetween6To18MonthsUpperHalfSentence rdf:type owl:Class ;
+                                                                    rdfs:subClassOf delito_contra_patrimonio:PropertyCrimePunishments .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#PrisionBetween6To18Moths
+delito_contra_patrimonio:PrisionBetween6To18Moths rdf:type owl:Class ;
+                                                  rdfs:subClassOf delito_contra_patrimonio:PropertyCrimePunishments .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#ProvisionOfServiceThing
+delito_contra_patrimonio:ProvisionOfServiceThing rdf:type owl:Class ;
+                                                 rdfs:subClassOf delito_contra_patrimonio:ThingCharacteristic .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#Punishment
+delito_contra_patrimonio:Punishment rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#PropertyCrimePunishments
+delito_contra_patrimonio:PropertyCrimePunishments rdf:type owl:Class ;
+                                                             rdfs:subClassOf delito_contra_patrimonio:Punishment .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#RemoteOpeningDevice
+delito_contra_patrimonio:RemoteOpeningDevice rdf:type owl:Class ;
+                                             rdfs:subClassOf delito_contra_patrimonio:ForgedKeys .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#Report
+delito_contra_patrimonio:Report rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#RobberyCharacteristic
+delito_contra_patrimonio:RobberyCharacteristic rdf:type owl:Class ;
+                                               owl:equivalentClass [ owl:intersectionOf ( delito_contra_patrimonio:OffenceCharacteristic
+                                                                                          [ rdf:type owl:Class ;
+                                                                                            owl:unionOf ( delito_contra_patrimonio:BurglaryCrime
+                                                                                                          delito_contra_patrimonio:HouseOrPremiseBreaking
+                                                                                                          delito_contra_patrimonio:RobberyWithIntimidationOrViolence
+                                                                                                        )
+                                                                                          ]
+                                                                                        ) ;
+                                                                     rdf:type owl:Class
+                                                                   ] .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#Robbery
+delito_contra_patrimonio:Robbery rdf:type owl:Class ;
+                                        owl:equivalentClass [ owl:intersectionOf ( delito_contra_patrimonio:PropertyCrimeReport
+                                                                                   [ rdf:type owl:Restriction ;
+                                                                                     owl:onProperty delito_contra_patrimonio:stolenthing ;
+                                                                                     owl:someValuesFrom [ rdf:type owl:Restriction ;
+                                                                                                          owl:onProperty delito_contra_patrimonio:stolenBy ;
+                                                                                                          owl:someValuesFrom delito_contra_patrimonio:Accused
+                                                                                                        ]
+                                                                                   ]
+                                                                                   [ rdf:type owl:Restriction ;
+                                                                                     owl:onProperty delito_contra_patrimonio:hasOffenceCharacteristic ;
+                                                                                     owl:someValuesFrom delito_contra_patrimonio:RobberyCharacteristic
+                                                                                   ]
+                                                                                 ) ;
+                                                              rdf:type owl:Class
+                                                            ] ;
+                                        owl:disjointWith delito_contra_patrimonio:Theft .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#RobberyWithIntimidationOrViolence
+delito_contra_patrimonio:RobberyWithIntimidationOrViolence rdf:type owl:Class ;
+                                                           rdfs:subClassOf delito_contra_patrimonio:OffenceCharacteristic .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#ScientificThing
+delito_contra_patrimonio:ScientificThing rdf:type owl:Class ;
+                                         rdfs:subClassOf delito_contra_patrimonio:ThingCharacteristic .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#TelecommunicationsComponent
+delito_contra_patrimonio:TelecommunicationsComponent rdf:type owl:Class ;
+                                                    rdfs:subClassOf delito_contra_patrimonio:ComponentsOfServiceSupply .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#Theft
+delito_contra_patrimonio:Theft rdf:type owl:Class ;
+                                      owl:equivalentClass [ owl:intersectionOf ( delito_contra_patrimonio:PropertyCrimeReport
+                                                                                 [ rdf:type owl:Class ;
+                                                                                   owl:complementOf [ rdf:type owl:Restriction ;
+                                                                                                      owl:onProperty delito_contra_patrimonio:hasOffenceCharacteristic ;
+                                                                                                      owl:someValuesFrom delito_contra_patrimonio:RobberyCharacteristic
+                                                                                                    ]
+                                                                                 ]
+                                                                                 [ rdf:type owl:Restriction ;
+                                                                                   owl:onProperty delito_contra_patrimonio:stolenthing ;
+                                                                                   owl:someValuesFrom [ rdf:type owl:Restriction ;
+                                                                                                        owl:onProperty delito_contra_patrimonio:stolenBy ;
+                                                                                                        owl:someValuesFrom delito_contra_patrimonio:Accused
+                                                                                                      ]
+                                                                                 ]
+                                                                               ) ;
+                                                            rdf:type owl:Class
+                                                          ] .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#TheftByOwner
+delito_contra_patrimonio:TheftByOwner rdf:type owl:Class ;
+                                                      owl:equivalentClass [ owl:intersectionOf ( delito_contra_patrimonio:Theft
+                                                                                                 [ rdf:type owl:Restriction ;
+                                                                                                   owl:onProperty delito_contra_patrimonio:stolenthing ;
+                                                                                                   owl:someValuesFrom [ rdf:type owl:Restriction ;
+                                                                                                                        owl:onProperty delito_contra_patrimonio:stolenByOwner ;
+                                                                                                                        owl:someValuesFrom delito_contra_patrimonio:Person
+                                                                                                                      ]
+                                                                                                 ]
+                                                                                               ) ;
+                                                                            rdf:type owl:Class
+                                                                          ] .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#TheftByNotOwner
+delito_contra_patrimonio:TheftByNotOwner rdf:type owl:Class ;
+                                                    owl:equivalentClass [ owl:intersectionOf ( delito_contra_patrimonio:Theft
+                                                                                               [ rdf:type owl:Restriction ;
+                                                                                                 owl:onProperty delito_contra_patrimonio:stolenthing ;
+                                                                                                 owl:someValuesFrom [ rdf:type owl:Restriction ;
+                                                                                                                      owl:onProperty delito_contra_patrimonio:usedByOwner ;
+                                                                                                                      owl:someValuesFrom delito_contra_patrimonio:Person
+                                                                                                                    ]
+                                                                                               ]
+                                                                                             ) ;
+                                                                          rdf:type owl:Class
+                                                                        ] .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#UnlawfulEntry
+delito_contra_patrimonio:UnlawfulEntry rdf:type owl:Class ;
+                                       rdfs:subClassOf delito_contra_patrimonio:OffenceCharacteristic .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#UpperHalfSentence
+delito_contra_patrimonio:UpperHalfSentence rdf:type owl:Class ;
+                                           rdfs:subClassOf delito_contra_patrimonio:PropertyCrimePunishments .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#Victim
+delito_contra_patrimonio:Victim rdf:type owl:Class ;
+                                rdfs:subClassOf delito_contra_patrimonio:Person .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#Atestado_06_21
+delito_contra_patrimonio:Atestado_06_21 rdf:type owl:NamedIndividual ,
+                                                 delito_contra_patrimonio:Report ;
+                                        delito_contra_patrimonio:hasAggravatingFactor delito_contra_patrimonio:Pistola ,
+                                                                                         delito_contra_patrimonio:Taser ;
+                                        delito_contra_patrimonio:hasOffenceCharacteristic delito_contra_patrimonio:Violencia .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#Pistola
+delito_contra_patrimonio:Pistola rdf:type owl:NamedIndividual ,
+                                          delito_contra_patrimonio:ArmedRobbery .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#Taser
+delito_contra_patrimonio:Taser rdf:type owl:NamedIndividual ,
+                                        delito_contra_patrimonio:ArmedRobbery .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#Victima_01
+delito_contra_patrimonio:Victima_01 rdf:type owl:NamedIndividual ,
+                                             delito_contra_patrimonio:Victim .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#Victima_02
+delito_contra_patrimonio:Victima_02 rdf:type owl:NamedIndividual ,
+                                             delito_contra_patrimonio:Victim .
+
+
+###  http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#Violencia
+delito_contra_patrimonio:Violencia rdf:type owl:NamedIndividual ,
+                                            delito_contra_patrimonio:RobberyWithIntimidationOrViolence .
+
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ owl:intersectionOf ( delito_contra_patrimonio:Article234_1
+                       delito_contra_patrimonio:Article234_3
+                       delito_contra_patrimonio:PropertyCrimeReport
+                     ) ;
+  rdf:type owl:Class ;
+  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                    owl:onProperty delito_contra_patrimonio:hasPunishment ;
+                    owl:someValuesFrom delito_contra_patrimonio:UpperHalfSentence
+                  ]
+] .
+
+
+[ owl:intersectionOf ( delito_contra_patrimonio:Article234_1
+                       delito_contra_patrimonio:PropertyCrimeReport
+                     ) ;
+  rdf:type owl:Class ;
+  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                    owl:onProperty delito_contra_patrimonio:hasPunishment ;
+                    owl:someValuesFrom delito_contra_patrimonio:PrisionBetween6To18Moths
+                  ]
+] .
+
+
+[ owl:intersectionOf ( delito_contra_patrimonio:Article234_2
+                       delito_contra_patrimonio:Article234_3
+                       delito_contra_patrimonio:PropertyCrimeReport
+                     ) ;
+  rdf:type owl:Class ;
+  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                    owl:onProperty delito_contra_patrimonio:hasPunishment ;
+                    owl:someValuesFrom delito_contra_patrimonio:UpperHalfSentence
+                  ]
+] .
+
+
+[ owl:intersectionOf ( delito_contra_patrimonio:Article234_2
+                       delito_contra_patrimonio:PropertyCrimeReport
+                     ) ;
+  rdf:type owl:Class ;
+  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                    owl:onProperty delito_contra_patrimonio:hasPunishment ;
+                    owl:someValuesFrom delito_contra_patrimonio:PrisionBetween1To3Moths
+                  ]
+] .
+
+
+[ owl:intersectionOf ( delito_contra_patrimonio:Article236_1
+                       delito_contra_patrimonio:PropertyCrimeReport
+                     ) ;
+  rdf:type owl:Class ;
+  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                    owl:onProperty delito_contra_patrimonio:hasPunishment ;
+                    owl:someValuesFrom delito_contra_patrimonio:FineOfFrom3To12Months
+                  ]
+] .
+
+
+[ owl:intersectionOf ( delito_contra_patrimonio:Article236_2
+                       delito_contra_patrimonio:PropertyCrimeReport
+                     ) ;
+  rdf:type owl:Class ;
+  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                    owl:onProperty delito_contra_patrimonio:hasPunishment ;
+                    owl:someValuesFrom delito_contra_patrimonio:FineOfFrom1To3Months
+                  ]
+] .
+
+
+[ owl:intersectionOf ( delito_contra_patrimonio:Article241_1
+                       delito_contra_patrimonio:Article241_4
+                       delito_contra_patrimonio:PropertyCrimeReport
+                     ) ;
+  rdf:type owl:Class ;
+  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                    owl:onProperty delito_contra_patrimonio:hasPunishment ;
+                    owl:someValuesFrom delito_contra_patrimonio:PrisionBetween2To6Years
+                  ]
+] .
+
+
+[ owl:intersectionOf ( delito_contra_patrimonio:Article241_1
+                       delito_contra_patrimonio:PropertyCrimeReport
+                       [ rdf:type owl:Class ;
+                         owl:complementOf delito_contra_patrimonio:Article241_4
+                       ]
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty delito_contra_patrimonio:isOpenOrOccupied ;
+                         owl:hasValue "false"^^xsd:boolean
+                       ]
+                     ) ;
+  rdf:type owl:Class ;
+  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                    owl:onProperty delito_contra_patrimonio:hasPunishment ;
+                    owl:someValuesFrom delito_contra_patrimonio:PrisionBetween1To5Years
+                  ]
+] .
+
+
+[ owl:intersectionOf ( delito_contra_patrimonio:Article241_1
+                       delito_contra_patrimonio:PropertyCrimeReport
+                       [ rdf:type owl:Class ;
+                         owl:complementOf delito_contra_patrimonio:Article241_4
+                       ]
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty delito_contra_patrimonio:isOpenOrOccupied ;
+                         owl:hasValue "true"^^xsd:boolean
+                       ]
+                     ) ;
+  rdf:type owl:Class ;
+  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                    owl:onProperty delito_contra_patrimonio:hasPunishment ;
+                    owl:someValuesFrom delito_contra_patrimonio:PrisionBetween2To5Years
+                  ]
+] .
+
+
+[ owl:intersectionOf ( delito_contra_patrimonio:Article242
+                       delito_contra_patrimonio:Article242_2
+                       delito_contra_patrimonio:Article242_3
+                       delito_contra_patrimonio:Article242_4
+                       delito_contra_patrimonio:PropertyCrimeReport
+                     ) ;
+  rdf:type owl:Class ;
+  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                    owl:onProperty delito_contra_patrimonio:hasPunishment ;
+                    owl:someValuesFrom delito_contra_patrimonio:PrisionBetween3YearsAnd6MonthsTo5YearsUpperHalfSentenceLowerHalfSentence
+                  ]
+] .
+
+
+[ owl:intersectionOf ( delito_contra_patrimonio:Article242
+                       delito_contra_patrimonio:Article242_2
+                       delito_contra_patrimonio:Article242_3
+                       delito_contra_patrimonio:PropertyCrimeReport
+                       [ rdf:type owl:Class ;
+                         owl:complementOf delito_contra_patrimonio:Article242_4
+                       ]
+                     ) ;
+  rdf:type owl:Class ;
+  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                    owl:onProperty delito_contra_patrimonio:hasPunishment ;
+                    owl:someValuesFrom delito_contra_patrimonio:PrisionBetween3YearsAnd6MonthsTo5YearsUpperHalfSentence
+                  ]
+] .
+
+
+[ owl:intersectionOf ( delito_contra_patrimonio:Article242
+                       delito_contra_patrimonio:Article242_2
+                       delito_contra_patrimonio:Article242_4
+                       delito_contra_patrimonio:PropertyCrimeReport
+                       [ rdf:type owl:Class ;
+                         owl:complementOf delito_contra_patrimonio:Article242_3
+                       ]
+                     ) ;
+  rdf:type owl:Class ;
+  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                    owl:onProperty delito_contra_patrimonio:hasPunishment ;
+                    owl:someValuesFrom delito_contra_patrimonio:PrisionBetween3YearsAnd6MonthsTo5YearsLowerHalfSentence
+                  ]
+] .
+
+
+[ owl:intersectionOf ( delito_contra_patrimonio:Article242
+                       delito_contra_patrimonio:Article242_3
+                       delito_contra_patrimonio:Article242_4
+                       delito_contra_patrimonio:PropertyCrimeReport
+                       [ rdf:type owl:Class ;
+                         owl:complementOf delito_contra_patrimonio:Article242_2
+                       ]
+                     ) ;
+  rdf:type owl:Class ;
+  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                    owl:onProperty delito_contra_patrimonio:hasPunishment ;
+                    owl:someValuesFrom delito_contra_patrimonio:PrisionBetween2To5YearsUpperHalfSentenceLowerHalfSentence
+                  ]
+] .
+
+
+[ owl:intersectionOf ( delito_contra_patrimonio:Article242
+                       delito_contra_patrimonio:Article242_3
+                       delito_contra_patrimonio:PropertyCrimeReport
+                       [ rdf:type owl:Class ;
+                         owl:complementOf [ owl:intersectionOf ( delito_contra_patrimonio:Article242_2
+                                                                 delito_contra_patrimonio:Article242_4
+                                                               ) ;
+                                            rdf:type owl:Class
+                                          ]
+                       ]
+                     ) ;
+  rdf:type owl:Class ;
+  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                    owl:onProperty delito_contra_patrimonio:hasPunishment ;
+                    owl:someValuesFrom delito_contra_patrimonio:PrisionBetween2To5YearsUpperHalfSentence
+                  ]
+] .
+
+
+[ owl:intersectionOf ( delito_contra_patrimonio:Article242
+                       delito_contra_patrimonio:Article242_4
+                       delito_contra_patrimonio:PropertyCrimeReport
+                       [ rdf:type owl:Class ;
+                         owl:complementOf [ owl:intersectionOf ( delito_contra_patrimonio:Article242_2
+                                                                 delito_contra_patrimonio:Article242_3
+                                                               ) ;
+                                            rdf:type owl:Class
+                                          ]
+                       ]
+                     ) ;
+  rdf:type owl:Class ;
+  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                    owl:onProperty delito_contra_patrimonio:hasPunishment ;
+                    owl:someValuesFrom delito_contra_patrimonio:PrisionBetween2To5YearsLowerHalfSentence
+                  ]
+] .
+
+
+[ owl:intersectionOf ( delito_contra_patrimonio:Article242
+                       delito_contra_patrimonio:PropertyCrimeReport
+                       [ rdf:type owl:Class ;
+                         owl:complementOf [ owl:intersectionOf ( delito_contra_patrimonio:Article242_2
+                                                                 delito_contra_patrimonio:Article242_3
+                                                                 delito_contra_patrimonio:Article242_4
+                                                               ) ;
+                                            rdf:type owl:Class
+                                          ]
+                       ]
+                     ) ;
+  rdf:type owl:Class ;
+  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                    owl:onProperty delito_contra_patrimonio:hasPunishment ;
+                    owl:someValuesFrom delito_contra_patrimonio:PrisionBetween2To5Years
+                  ]
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( delito_contra_patrimonio:AgriculturalOrLivestockProduct
+                delito_contra_patrimonio:ArtisticThing
+                delito_contra_patrimonio:CulturalThing
+                delito_contra_patrimonio:EssentialThing
+                delito_contra_patrimonio:HistoricalThing
+                delito_contra_patrimonio:ProvisionOfServiceThing
+                delito_contra_patrimonio:ScientificThing
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( delito_contra_patrimonio:ForcedEntry
+                delito_contra_patrimonio:Burglary
+                delito_contra_patrimonio:DisabledAlarm
+                delito_contra_patrimonio:ForgedKeys
+                delito_contra_patrimonio:ForcedLock
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( delito_contra_patrimonio:Cabling
+                delito_contra_patrimonio:ComponentsOfServiceSupply
+                delito_contra_patrimonio:Pipelines
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( delito_contra_patrimonio:BurglaryCrime
+                delito_contra_patrimonio:HouseOrPremiseBreaking
+                delito_contra_patrimonio:RobberyWithIntimidationOrViolence
+                delito_contra_patrimonio:UnlawfulEntry
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( delito_contra_patrimonio:ElectricityComponent
+                delito_contra_patrimonio:GeneralInterestComponent
+                delito_contra_patrimonio:HydrocarbonsComponent
+                delito_contra_patrimonio:TelecommunicationsComponent
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( delito_contra_patrimonio:FinancialSituation
+                delito_contra_patrimonio:Helplessness
+                delito_contra_patrimonio:PersonalAbuse
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( delito_contra_patrimonio:CopiedKeys
+                delito_contra_patrimonio:LostKeys
+                delito_contra_patrimonio:StolenKeys
+                delito_contra_patrimonio:RemoteOpeningDevice
+              )
+] .
+
+
+#################################################################
+#    Rules
+#################################################################
+
+<urn:swrl:var#m> rdf:type swrl:Variable .
+
+<urn:swrl:var#p> rdf:type swrl:Variable .
+
+<urn:swrl:var#p1> rdf:type swrl:Variable .
+
+<urn:swrl:var#p2> rdf:type swrl:Variable .
+
+[ swrla:isRuleEnabled "true"^^xsd:boolean ;
+   rdfs:comment ""^^xsd:string ;
+   rdfs:label "S01"^^xsd:string ;
+   rdf:type swrl:Imp ;
+   swrl:body [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:ClassAtom ;
+                           swrl:classPredicate delito_contra_patrimonio:StolenGoods ;
+                           swrl:argument1 <urn:swrl:var#m>
+                         ] ;
+               rdf:rest [ rdf:type swrl:AtomList ;
+                          rdf:first [ rdf:type swrl:ClassAtom ;
+                                      swrl:classPredicate delito_contra_patrimonio:Person ;
+                                      swrl:argument1 <urn:swrl:var#p>
+                                    ] ;
+                          rdf:rest [ rdf:type swrl:AtomList ;
+                                     rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                                 swrl:propertyPredicate delito_contra_patrimonio:belongsTo ;
+                                                 swrl:argument1 <urn:swrl:var#m> ;
+                                                 swrl:argument2 <urn:swrl:var#p>
+                                               ] ;
+                                     rdf:rest [ rdf:type swrl:AtomList ;
+                                                rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                                            swrl:propertyPredicate delito_contra_patrimonio:usedBy ;
+                                                            swrl:argument1 <urn:swrl:var#m> ;
+                                                            swrl:argument2 <urn:swrl:var#p>
+                                                          ] ;
+                                                rdf:rest rdf:nil
+                                              ]
+                                   ]
+                        ]
+             ] ;
+   swrl:head [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                           swrl:propertyPredicate delito_contra_patrimonio:usedByOwner ;
+                           swrl:argument1 <urn:swrl:var#m> ;
+                           swrl:argument2 <urn:swrl:var#p>
+                         ] ;
+               rdf:rest rdf:nil
+             ]
+ ] .
+
+[ swrla:isRuleEnabled "true"^^xsd:boolean ;
+   rdfs:comment ""^^xsd:string ;
+   rdfs:label "S03"^^xsd:string ;
+   rdf:type swrl:Imp ;
+   swrl:body [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:ClassAtom ;
+                           swrl:classPredicate delito_contra_patrimonio:StolenGoods ;
+                           swrl:argument1 <urn:swrl:var#m>
+                         ] ;
+               rdf:rest [ rdf:type swrl:AtomList ;
+                          rdf:first [ rdf:type swrl:ClassAtom ;
+                                      swrl:classPredicate delito_contra_patrimonio:Person ;
+                                      swrl:argument1 <urn:swrl:var#p1>
+                                    ] ;
+                          rdf:rest [ rdf:type swrl:AtomList ;
+                                     rdf:first [ rdf:type swrl:ClassAtom ;
+                                                 swrl:classPredicate delito_contra_patrimonio:Person ;
+                                                 swrl:argument1 <urn:swrl:var#p2>
+                                               ] ;
+                                     rdf:rest [ rdf:type swrl:AtomList ;
+                                                rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                                            swrl:propertyPredicate delito_contra_patrimonio:belongsTo ;
+                                                            swrl:argument1 <urn:swrl:var#m> ;
+                                                            swrl:argument2 <urn:swrl:var#p1>
+                                                          ] ;
+                                                rdf:rest [ rdf:type swrl:AtomList ;
+                                                           rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                                                       swrl:propertyPredicate delito_contra_patrimonio:stolenBy ;
+                                                                       swrl:argument1 <urn:swrl:var#m> ;
+                                                                       swrl:argument2 <urn:swrl:var#p1>
+                                                                     ] ;
+                                                           rdf:rest [ rdf:type swrl:AtomList ;
+                                                                      rdf:first [ rdf:type swrl:SameIndividualAtom ;
+                                                                                  swrl:argument1 <urn:swrl:var#p1> ;
+                                                                                  swrl:argument2 <urn:swrl:var#p1>
+                                                                                ] ;
+                                                                      rdf:rest [ rdf:type swrl:AtomList ;
+                                                                                 rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                                                                             swrl:propertyPredicate delito_contra_patrimonio:usedBy ;
+                                                                                             swrl:argument1 <urn:swrl:var#m> ;
+                                                                                             swrl:argument2 <urn:swrl:var#p2>
+                                                                                           ] ;
+                                                                                 rdf:rest [ rdf:type swrl:AtomList ;
+                                                                                            rdf:first [ rdf:type swrl:DifferentIndividualsAtom ;
+                                                                                                        swrl:argument1 <urn:swrl:var#p1> ;
+                                                                                                        swrl:argument2 <urn:swrl:var#p2>
+                                                                                                      ] ;
+                                                                                            rdf:rest rdf:nil
+                                                                                          ]
+                                                                               ]
+                                                                    ]
+                                                         ]
+                                              ]
+                                   ]
+                        ]
+             ] ;
+   swrl:head [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                           swrl:propertyPredicate delito_contra_patrimonio:stolenByOwner ;
+                           swrl:argument1 <urn:swrl:var#m> ;
+                           swrl:argument2 <urn:swrl:var#p1>
+                         ] ;
+               rdf:rest rdf:nil
+             ]
+ ] .
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
+

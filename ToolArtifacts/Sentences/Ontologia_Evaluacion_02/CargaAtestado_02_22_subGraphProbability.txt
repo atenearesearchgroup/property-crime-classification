@@ -1,0 +1,74 @@
+MATCH  (rootA:owl__NamedIndividual {name:'Atestado_02_22', article:'ns0_Article234_1'})
+CALL apoc.path.subgraphAll (rootA, {relationshipFilter:'<|>'})
+YIELD nodes, relationships
+RETURN ontology.util.subGraphProbability (relationships,'Article234_1');
+
+MATCH  (rootA:owl__NamedIndividual {name:'Atestado_02_22', article:'ns0_Article234_2'})
+CALL apoc.path.subgraphAll (rootA, {relationshipFilter:'<|>'})
+YIELD nodes, relationships
+RETURN ontology.util.subGraphProbability (relationships,'Article234_2');
+
+MATCH  (rootA:owl__NamedIndividual {name:'Atestado_02_22', article:'ns0_Article234_3'})
+CALL apoc.path.subgraphAll (rootA, {relationshipFilter:'<|>'})
+YIELD nodes, relationships
+RETURN ontology.util.subGraphProbability (relationships,'Article234_3');
+
+MATCH  (rootA:owl__NamedIndividual {name:'Atestado_02_22', article:'ns0_Article235_1'})
+CALL apoc.path.subgraphAll (rootA, {relationshipFilter:'<|>'})
+YIELD nodes, relationships
+RETURN ontology.util.subGraphProbability (relationships,'Article235_1');
+
+MATCH  (rootA:owl__NamedIndividual {name:'Atestado_02_22', article:'ns0_Article235_2'})
+CALL apoc.path.subgraphAll (rootA, {relationshipFilter:'<|>'})
+YIELD nodes, relationships
+RETURN ontology.util.subGraphProbability (relationships,'Article235_2');
+
+MATCH  (rootA:owl__NamedIndividual {name:'Atestado_02_22', article:'ns0_Article236_1'})
+CALL apoc.path.subgraphAll (rootA, {relationshipFilter:'<|>'})
+YIELD nodes, relationships
+RETURN ontology.util.subGraphProbability (relationships,'Article236_1');
+
+MATCH  (rootA:owl__NamedIndividual {name:'Atestado_02_22', article:'ns0_Article236_2'})
+CALL apoc.path.subgraphAll (rootA, {relationshipFilter:'<|>'})
+YIELD nodes, relationships
+RETURN ontology.util.subGraphProbability (relationships,'Article236_2');
+
+MATCH  (rootA:owl__NamedIndividual {name:'Atestado_02_22', article:'ns0_Article240_1'})
+CALL apoc.path.subgraphAll (rootA, {relationshipFilter:'<|>'})
+YIELD nodes, relationships
+RETURN ontology.util.subGraphProbability (relationships,'Article240_1');
+
+MATCH  (rootA:owl__NamedIndividual {name:'Atestado_02_22', article:'ns0_Article240_2'})
+CALL apoc.path.subgraphAll (rootA, {relationshipFilter:'<|>'})
+YIELD nodes, relationships
+RETURN ontology.util.subGraphProbability (relationships,'Article240_2');
+
+MATCH  (rootA:owl__NamedIndividual {name:'Atestado_02_22', article:'ns0_Article241_1'})
+CALL apoc.path.subgraphAll (rootA, {relationshipFilter:'<|>'})
+YIELD nodes, relationships
+RETURN ontology.util.subGraphProbability (relationships,'Article241_1');
+
+MATCH  (rootA:owl__NamedIndividual {name:'Atestado_02_22', article:'ns0_Article241_4'})
+CALL apoc.path.subgraphAll (rootA, {relationshipFilter:'<|>'})
+YIELD nodes, relationships
+RETURN ontology.util.subGraphProbability (relationships,'Article241_4');
+
+MATCH  (rootA:owl__NamedIndividual {name:'Atestado_02_22', article:'ns0_Article242_1'})
+CALL apoc.path.subgraphAll (rootA, {relationshipFilter:'<|>'})
+YIELD nodes, relationships
+RETURN ontology.util.subGraphProbability (relationships,'Article242_1');
+
+MATCH  (rootA:owl__NamedIndividual {name:'Atestado_02_22', article:'ns0_Article242_2'})
+CALL apoc.path.subgraphAll (rootA, {relationshipFilter:'<|>'})
+YIELD nodes, relationships
+RETURN ontology.util.subGraphProbability (relationships,'Article242_2');
+
+MATCH  (rootA:owl__NamedIndividual {name:'Atestado_02_22', article:'ns0_Article242_3'})
+CALL apoc.path.subgraphAll (rootA, {relationshipFilter:'<|>'})
+YIELD nodes, relationships
+RETURN ontology.util.subGraphProbability (relationships,'Article242_3');
+
+MATCH  (rootA:owl__NamedIndividual {name:'Atestado_02_22', article:'ns0_Article242_4'})
+CALL apoc.path.subgraphAll (rootA, {relationshipFilter:'<|>'})
+YIELD nodes, relationships
+RETURN ontology.util.subGraphProbability (relationships,'Article242_4');

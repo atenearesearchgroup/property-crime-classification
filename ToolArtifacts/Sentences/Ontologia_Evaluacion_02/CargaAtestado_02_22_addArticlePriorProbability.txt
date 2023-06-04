@@ -1,0 +1,74 @@
+MATCH  (rootA:owl__NamedIndividual {name:'Atestado_02_22', article:'ns0_Article234_1'})
+CALL ontology.util.addArticlePriorProbability(rootA, 'Article234_1')
+YIELD relations
+RETURN relations;
+
+MATCH  (rootA:owl__NamedIndividual {name:'Atestado_02_22', article:'ns0_Article234_2'})
+CALL ontology.util.addArticlePriorProbability(rootA, 'Article234_2')
+YIELD relations
+RETURN relations;
+
+MATCH  (rootA:owl__NamedIndividual {name:'Atestado_02_22', article:'ns0_Article234_3'})
+CALL ontology.util.addArticlePriorProbability(rootA, 'Article234_3')
+YIELD relations
+RETURN relations;
+
+MATCH  (rootA:owl__NamedIndividual {name:'Atestado_02_22', article:'ns0_Article235_1'})
+CALL ontology.util.addArticlePriorProbability(rootA, 'Article235_1')
+YIELD relations
+RETURN relations;
+
+MATCH  (rootA:owl__NamedIndividual {name:'Atestado_02_22', article:'ns0_Article235_2'})
+CALL ontology.util.addArticlePriorProbability(rootA, 'Article235_2')
+YIELD relations
+RETURN relations;
+
+MATCH  (rootA:owl__NamedIndividual {name:'Atestado_02_22', article:'ns0_Article236_1'})
+CALL ontology.util.addArticlePriorProbability(rootA, 'Article236_1')
+YIELD relations
+RETURN relations;
+
+MATCH  (rootA:owl__NamedIndividual {name:'Atestado_02_22', article:'ns0_Article236_2'})
+CALL ontology.util.addArticlePriorProbability(rootA, 'Article236_2')
+YIELD relations
+RETURN relations;
+
+MATCH  (rootA:owl__NamedIndividual {name:'Atestado_02_22', article:'ns0_Article240_1'})
+CALL ontology.util.addArticlePriorProbability(rootA, 'Article240_1')
+YIELD relations
+RETURN relations;
+
+MATCH  (rootA:owl__NamedIndividual {name:'Atestado_02_22', article:'ns0_Article240_2'})
+CALL ontology.util.addArticlePriorProbability(rootA, 'Article240_2')
+YIELD relations
+RETURN relations;
+
+MATCH  (rootA:owl__NamedIndividual {name:'Atestado_02_22', article:'ns0_Article241_1'})
+CALL ontology.util.addArticlePriorProbability(rootA, 'Article241_1')
+YIELD relations
+RETURN relations;
+
+MATCH  (rootA:owl__NamedIndividual {name:'Atestado_02_22', article:'ns0_Article241_4'})
+CALL ontology.util.addArticlePriorProbability(rootA, 'Article241_4')
+YIELD relations
+RETURN relations;
+
+MATCH  (rootA:owl__NamedIndividual {name:'Atestado_02_22', article:'ns0_Article242_1'})
+CALL ontology.util.addArticlePriorProbability(rootA, 'Article242_1')
+YIELD relations
+RETURN relations;
+
+MATCH  (rootA:owl__NamedIndividual {name:'Atestado_02_22', article:'ns0_Article242_2'})
+CALL ontology.util.addArticlePriorProbability(rootA, 'Article242_2')
+YIELD relations
+RETURN relations;
+
+MATCH  (rootA:owl__NamedIndividual {name:'Atestado_02_22', article:'ns0_Article242_3'})
+CALL ontology.util.addArticlePriorProbability(rootA, 'Article242_3')
+YIELD relations
+RETURN relations;
+
+MATCH  (rootA:owl__NamedIndividual {name:'Atestado_02_22', article:'ns0_Article242_4'})
+CALL ontology.util.addArticlePriorProbability(rootA, 'Article242_4')
+YIELD relations
+RETURN relations;

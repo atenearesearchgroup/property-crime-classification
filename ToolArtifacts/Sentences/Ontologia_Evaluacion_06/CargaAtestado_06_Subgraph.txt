@@ -1,0 +1,180 @@
+MATCH  (rootA:owl__NamedIndividual {name:'Atestado_06_21'}),
+       (rootB:owl__NamedIndividual {name:'Atestado_06_21', article:'ns0_Article234_1'})
+where rootA.article is null
+CALL apoc.path.subgraphAll(rootA, {relationshipFilter:'<|>'})
+YIELD nodes, relationships
+CALL apoc.refactor.cloneSubgraph(
+    nodes,
+    relationships,
+    { standinNodes:[[rootA, rootB]] })
+YIELD input, output, error
+RETURN input, output, error;
+
+MATCH  (rootA:owl__NamedIndividual {name:'Atestado_06_21'}),
+       (rootB:owl__NamedIndividual {name:'Atestado_06_21', article:'ns0_Article234_2'})
+where rootA.article is null
+CALL apoc.path.subgraphAll(rootA, {relationshipFilter:'<|>'})
+YIELD nodes, relationships
+CALL apoc.refactor.cloneSubgraph(
+    nodes,
+    relationships,
+    { standinNodes:[[rootA, rootB]] })
+YIELD input, output, error
+RETURN input, output, error;
+
+MATCH  (rootA:owl__NamedIndividual {name:'Atestado_06_21'}),
+       (rootB:owl__NamedIndividual {name:'Atestado_06_21', article:'ns0_Article234_3'})
+where rootA.article is null
+CALL apoc.path.subgraphAll(rootA, {relationshipFilter:'<|>'})
+YIELD nodes, relationships
+CALL apoc.refactor.cloneSubgraph(
+    nodes,
+    relationships,
+    { standinNodes:[[rootA, rootB]] })
+YIELD input, output, error
+RETURN input, output, error;
+
+MATCH  (rootA:owl__NamedIndividual {name:'Atestado_06_21'}),
+       (rootB:owl__NamedIndividual {name:'Atestado_06_21', article:'ns0_Article235_1'})
+where rootA.article is null
+CALL apoc.path.subgraphAll(rootA, {relationshipFilter:'<|>'})
+YIELD nodes, relationships
+CALL apoc.refactor.cloneSubgraph(
+    nodes,
+    relationships,
+    { standinNodes:[[rootA, rootB]] })
+YIELD input, output, error
+RETURN input, output, error;
+
+MATCH  (rootA:owl__NamedIndividual {name:'Atestado_06_21'}),
+       (rootB:owl__NamedIndividual {name:'Atestado_06_21', article:'ns0_Article235_2'})
+where rootA.article is null
+CALL apoc.path.subgraphAll(rootA, {relationshipFilter:'<|>'})
+YIELD nodes, relationships
+CALL apoc.refactor.cloneSubgraph(
+    nodes,
+    relationships,
+    { standinNodes:[[rootA, rootB]] })
+YIELD input, output, error
+RETURN input, output, error;
+
+MATCH  (rootA:owl__NamedIndividual {name:'Atestado_06_21'}),
+       (rootB:owl__NamedIndividual {name:'Atestado_06_21', article:'ns0_Article236_1'})
+where rootA.article is null
+CALL apoc.path.subgraphAll(rootA, {relationshipFilter:'<|>'})
+YIELD nodes, relationships
+CALL apoc.refactor.cloneSubgraph(
+    nodes,
+    relationships,
+    { standinNodes:[[rootA, rootB]] })
+YIELD input, output, error
+RETURN input, output, error;
+
+MATCH  (rootA:owl__NamedIndividual {name:'Atestado_06_21'}),
+       (rootB:owl__NamedIndividual {name:'Atestado_06_21', article:'ns0_Article236_2'})
+where rootA.article is null
+CALL apoc.path.subgraphAll(rootA, {relationshipFilter:'<|>'})
+YIELD nodes, relationships
+CALL apoc.refactor.cloneSubgraph(
+    nodes,
+    relationships,
+    { standinNodes:[[rootA, rootB]] })
+YIELD input, output, error
+RETURN input, output, error;
+
+MATCH  (rootA:owl__NamedIndividual {name:'Atestado_06_21'}),
+       (rootB:owl__NamedIndividual {name:'Atestado_06_21', article:'ns0_Article240_1'})
+where rootA.article is null
+CALL apoc.path.subgraphAll(rootA, {relationshipFilter:'<|>'})
+YIELD nodes, relationships
+CALL apoc.refactor.cloneSubgraph(
+    nodes,
+    relationships,
+    { standinNodes:[[rootA, rootB]] })
+YIELD input, output, error
+RETURN input, output, error;
+
+MATCH  (rootA:owl__NamedIndividual {name:'Atestado_06_21'}),
+       (rootB:owl__NamedIndividual {name:'Atestado_06_21', article:'ns0_Article240_2'})
+where rootA.article is null
+CALL apoc.path.subgraphAll(rootA, {relationshipFilter:'<|>'})
+YIELD nodes, relationships
+CALL apoc.refactor.cloneSubgraph(
+    nodes,
+    relationships,
+    { standinNodes:[[rootA, rootB]] })
+YIELD input, output, error
+RETURN input, output, error;
+
+MATCH  (rootA:owl__NamedIndividual {name:'Atestado_06_21'}),
+       (rootB:owl__NamedIndividual {name:'Atestado_06_21', article:'ns0_Article241_1'})
+where rootA.article is null
+CALL apoc.path.subgraphAll(rootA, {relationshipFilter:'<|>'})
+YIELD nodes, relationships
+CALL apoc.refactor.cloneSubgraph(
+    nodes,
+    relationships,
+    { standinNodes:[[rootA, rootB]] })
+YIELD input, output, error
+RETURN input, output, error;
+
+MATCH  (rootA:owl__NamedIndividual {name:'Atestado_06_21'}),
+       (rootB:owl__NamedIndividual {name:'Atestado_06_21', article:'ns0_Article241_4'})
+where rootA.article is null
+CALL apoc.path.subgraphAll(rootA, {relationshipFilter:'<|>'})
+YIELD nodes, relationships
+CALL apoc.refactor.cloneSubgraph(
+    nodes,
+    relationships,
+    { standinNodes:[[rootA, rootB]] })
+YIELD input, output, error
+RETURN input, output, error;
+
+MATCH  (rootA:owl__NamedIndividual {name:'Atestado_06_21'}),
+       (rootB:owl__NamedIndividual {name:'Atestado_06_21', article:'ns0_Article242_1'})
+where rootA.article is null
+CALL apoc.path.subgraphAll(rootA, {relationshipFilter:'<|>'})
+YIELD nodes, relationships
+CALL apoc.refactor.cloneSubgraph(
+    nodes,
+    relationships,
+    { standinNodes:[[rootA, rootB]] })
+YIELD input, output, error
+RETURN input, output, error;
+
+MATCH  (rootA:owl__NamedIndividual {name:'Atestado_06_21'}),
+       (rootB:owl__NamedIndividual {name:'Atestado_06_21', article:'ns0_Article242_2'})
+where rootA.article is null
+CALL apoc.path.subgraphAll(rootA, {relationshipFilter:'<|>'})
+YIELD nodes, relationships
+CALL apoc.refactor.cloneSubgraph(
+    nodes,
+    relationships,
+    { standinNodes:[[rootA, rootB]] })
+YIELD input, output, error
+RETURN input, output, error;
+
+MATCH  (rootA:owl__NamedIndividual {name:'Atestado_06_21'}),
+       (rootB:owl__NamedIndividual {name:'Atestado_06_21', article:'ns0_Article242_3'})
+where rootA.article is null
+CALL apoc.path.subgraphAll(rootA, {relationshipFilter:'<|>'})
+YIELD nodes, relationships
+CALL apoc.refactor.cloneSubgraph(
+    nodes,
+    relationships,
+    { standinNodes:[[rootA, rootB]] })
+YIELD input, output, error
+RETURN input, output, error;
+
+
+MATCH  (rootA:owl__NamedIndividual {name:'Atestado_06_21'}),
+       (rootB:owl__NamedIndividual {name:'Atestado_06_21', article:'ns0_Article242_4'})
+where rootA.article is null
+CALL apoc.path.subgraphAll(rootA, {relationshipFilter:'<|>'})
+YIELD nodes, relationships
+CALL apoc.refactor.cloneSubgraph(
+    nodes,
+    relationships,
+    { standinNodes:[[rootA, rootB]] })
+YIELD input, output, error
+RETURN input, output, error;

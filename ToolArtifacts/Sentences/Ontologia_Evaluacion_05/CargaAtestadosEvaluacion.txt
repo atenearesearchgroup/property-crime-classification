@@ -1,0 +1,116 @@
+##### Borrado de todo
+MATCH (n)
+DETACH DELETE n
+
+
+##### Carga de la ontologia  populada
+####### Solo cuando se crea una base de datos ---CREATE CONSTRAINT n10s_unique_uri ON (r:Resource) ASSERT r.uri IS UNIQUE
+CALL n10s.graphconfig.init();
+###### Para cada atestado
+CALL n10s.rdf.import.fetch("file:///var/lib/neo4j/import/Atestado_Evaluacion_Pellet.owl","Turtle");
+
+##### Simplificacion de nombres y relaciones
+match (n)
+SET n.name = replace(n.uri, "http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#","")
+return n
+
+MATCH (n)-[r:ns0__ReportProperty]->(p) delete r ;
+MATCH (n)-[r:ns0__CharacteristicProperty]->(p) delete r ;
+MATCH (n)-[r:ns0__PersonProperty]->(p) delete r ;
+MATCH (n)-[r:ns0__TheftThingProp]->(p) delete r ;
+MATCH (n)-[r:rdf__type]->(p) delete r ;
+
+MATCH (n:ns0__Report)-[r:rdf__type]->(p) 
+where p.name starts with "bnode" delete r ;
+
+## No ejecutar si quremos visualizar los nombres   
+MATCH (n) where n.uri is not null set n.uri = null return *
+
+##### Identificacion de un report
+MATCH (c:owl__NamedIndividual {name: "Atestado_05_20"})
+CALL apoc.path.spanningTree(c, {
+    relationshipFilter: "< | >",
+    minLevel: 1,
+    maxLevel: 5
+})
+YIELD path
+return path
+
+
+##### Primer ejemplo
+######Configuración Segundo ejemplo
+#Duplicado del root con el artículo a estudiar
+MATCH (rootA:owl__NamedIndividual {name: 'Atestado_05_20'})
+WHERE rootA.article is null
+call apoc.refactor.cloneNodes([rootA], false) yield output
+with rootA, output
+set output.article = 'ns0_Article242_2'
+return rootA, output
+
+#Consulta de roots duplicados
+MATCH (rootA:owl__NamedIndividual {name: 'Atestado_05_20'})
+WHERE rootA.article is not null 
+return rootA
+
+####Esto no hace falta de momento
+MATCH (rootA:owl__NamedIndividual {name: 'Atestado_05_20'})
+WHERE rootA.uri is null 
+set rootA.article = 'ns0_Article242_2'
+return *
+
+## Desbloqueo del uri para clonar el subgrafo
+MATCH (n) where n.uri is not null set n.uri = null return *
+
+##Solo para generar nuevos subgrafos regenerar URIs
+MATCH (n) 
+where n.uri is null and n.name is not null set n.uri = 'http://www.semanticweb.org/fjnavarrete/ontologies/2022/0/delito_contra_patrimonio#'+ n.name return *
+
+#Duplicado del subgrafo inicial reconocido por la ontología aplicandole un artículo
+MATCH  (rootA:owl__NamedIndividual {name:'Atestado_05_20'}),
+       (rootB:owl__NamedIndividual {name:'Atestado_05_20', article:'ns0_Article242_2'})
+where rootA.article is null
+CALL apoc.path.subgraphAll(rootA, {relationshipFilter:'<|>'})
+YIELD nodes, relationships
+CALL apoc.refactor.cloneSubgraph(
+    nodes,
+    relationships,
+    { standinNodes:[[rootA, rootB]] })
+YIELD input, output, error
+RETURN input, output, error;
+
+
+#Lectura del grafo
+MATCH  (rootA:owl__NamedIndividual {name:'Atestado_05_20', article:'ns0_Article234_3'})
+CALL apoc.path.subgraphAll(rootA, {relationshipFilter:'<|>'})
+YIELD nodes, relationships
+RETURN nodes, relationships;
+
+#Borrado del grafo
+#MATCH  (rootA:owl__NamedIndividual {name:'Atestado_05_20', article:'ns0_Article242_1'})
+CALL apoc.path.subgraphNodes(rootA, {})
+YIELD node
+DETACH DELETE node;
+
+#MATCH  (rootA:owl__NamedIndividual {name:'Atestado_05_20'})
+where rootA.article is not null
+CALL apoc.path.subgraphNodes(rootA, {})
+YIELD node
+DETACH DELETE node;
+
+#Hay que definir el root de un subgrafo a recorre aplicandole la jerarquía de elementos a valorar. Si no existe se crea, si existe se calcula su probabilidad, 
+si sobran se penaliza en funcion de las ramas existenentes de relaciones.
+MATCH  (rootA:owl__NamedIndividual {name:'Atestado_05_20', article:'ns0_Article242_2'})
+CALL ontology.util.addArticlePriorProbability(rootA, 'Article242_2')
+YIELD relations
+RETURN relations;
+
+MATCH  (rootA:owl__NamedIndividual 
+  {name:'Atestado_05_20', 
+  article:'ns0_Article242_2'})
+CALL apoc.path.subgraphAll
+ (rootA, {relationshipFilter:'<|>'})
+YIELD nodes, relationships
+RETURN ontology.util.subGraphProbability
+  (relationships,'Article242_2');
+
+
